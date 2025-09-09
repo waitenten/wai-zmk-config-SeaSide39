@@ -184,6 +184,13 @@
             #binding-cells = <0>;
             bindings = <&mt LSHFT LANGUAGE_2>, <&kp LANGUAGE_1>;
         };
+
+        td_pi_co: td_pi_co {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PI_CO";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp COMMA>;
+        };
     };
 
     keymap {
@@ -194,7 +201,7 @@
 &kp Q      &kp W      &kp E      &kp R          &kp T                                                  &kp Y             &kp U    &kp I                &kp O       &lt 6 P
 &kp A      &kp S      &kp D      &kp F          &kp G                                                  &kp H             &kp J    &kp K                &kp L       &kp MINUS
 &kp X      &kp Z      &kp C      &kp V          &kp B                                                  &kp N             &lt 5 M  &mt RIGHT_ALT COMMA  &kp PERIOD  &kp QUESTION
-&td_ct_nm  &td_at_co  &td_L5_qt  &kp BACKSPACE  &lt 1 SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &lt 2 INT_HENKAN                                            &mt RCTRL ENTER
+&td_ct_nm  &td_at_co  &td_L5_qt  &kp BACKSPACE  &lt 2 SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &lt 2 INT_HENKAN                                            &mt RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -211,10 +218,10 @@
 
         NUM {
             bindings = <
-&trans  &kp F9  &kp F10  &kp F11  &kp F12                      &kp N7        &kp NUMBER_8  &kp NUMBER_9  &kp PLUS         &kp MINUS
-&trans  &kp F5  &kp F6   &kp F7   &kp F8                       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK     &kp SLASH
-&trans  &kp F1  &kp F2   &kp F3   &kp F4                       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RIGHT_BRACE  &kp COLON
-&trans  &trans  &trans   &trans   &trans   &trans      &trans  &kp NUMBER_0                                               &kp PERIOD
+&trans   &kp F2   &kp F3  &kp F4  &kp F5                              &kp SLASH             &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10                             &kp LS(SINGLE_QUOTE)  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS
+&kp F11  &kp F12  &trans  &trans  &trans                              &kp LS(MINUS)         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
+&trans   &trans   &trans  &trans  &trans   &trans      &kp BACKSPACE  &kp KP_NUMBER_0                                                          &kp ENTER
             >;
         };
 
