@@ -188,7 +188,7 @@
             bindings =
                 <&lt 5 LS(N7)>,
                 <&kp LS(NUMBER_2)>,
-                <&kt LS(RS(LEFT_BRACKET))>;
+                <&kt RS(LEFT_BRACKET)>;
         };
 
         td_at_co: td_at_co {
@@ -239,10 +239,10 @@
 
         SYMBOL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                          &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &kp C_MEDIA_WWW
-&trans  &trans  &trans  &trans  &trans                          &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&trans  &trans  &trans  &trans  &trans                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &kp DOUBLE_QUOTES
-&trans  &trans  &trans  &trans  &trans  &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &kp ENTER
+&trans  &trans  &trans  &trans  &kp RS(LEFT_BRACKET)                          &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &kp C_MEDIA_WWW
+&trans  &trans  &trans  &trans  &trans                                        &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&trans  &trans  &trans  &trans  &trans                                        &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &kp DOUBLE_QUOTES
+&trans  &trans  &trans  &trans  &trans                &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &kp ENTER
             >;
         };
 
