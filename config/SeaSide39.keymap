@@ -117,7 +117,7 @@
         };
 
         ad {
-            bindings = <&kp AMPERSAND>;
+            bindings = <&kp LS(N6)>;
             key-positions = <10 12>;
         };
 
@@ -205,7 +205,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CT_NM";
             #binding-cells = <0>;
-            bindings = <&mt LCTRL LS(EQUAL)>, <&kp KP_EQUAL>;
+            bindings = <&mt LCTRL LS(EQUAL)>, <&kp EQUAL>;
         };
 
         td_sh_ej: td_sh_ej {
@@ -220,6 +220,13 @@
             label = "TD_PI_CO";
             #binding-cells = <0>;
             bindings = <&kp PERIOD>, <&kp COMMA>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&mt LCTRL LS(EQUAL)>, <&kp EQUAL>;
         };
     };
 
