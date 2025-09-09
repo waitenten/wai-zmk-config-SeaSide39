@@ -239,9 +239,9 @@
 
         SYMBOL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                          &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &kp C_MEDIA_WWW
+&trans  &trans  &trans  &trans  &trans                          &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &kp K_WWW
 &trans  &trans  &trans  &trans  &trans                          &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&trans  &trans  &trans  &trans  &trans                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &kp DOUBLE_QUOTES
+&trans  &trans  &trans  &trans  &trans                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &kp ENTER
             >;
         };
@@ -277,10 +277,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &trans  &trans                          &trans
+&trans                &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
+&trans                &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
+&trans                &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
+&kp LA(SINGLE_QUOTE)  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &trans  &trans                          &trans
             >;
         };
 
