@@ -130,6 +130,36 @@
             bindings = <&kp LS(INTERNATIONAL_1)>;
             key-positions = <24 6>;
         };
+
+        lbrc {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <2 4>;
+        };
+
+        rbrc {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <5 7>;
+        };
+
+        lkako {
+            bindings = <&kp LS(NUMBER_8)>;
+            key-positions = <12 14>;
+        };
+
+        rkako {
+            bindings = <&kp LS(NUMBER_9)>;
+            key-positions = <15 17>;
+        };
+
+        lsbr {
+            bindings = <&kp LS(RIGHT_BRACKET)>;
+            key-positions = <22 24>;
+        };
+
+        rsbr {
+            bindings = <&kp LS(BACKSLASH)>;
+            key-positions = <25 27>;
+        };
     };
 
     macros {
@@ -209,10 +239,10 @@
 
         SYMBOL {
             bindings = <
-&kp PRCNT  &kp DOLLAR  &kp AMPERSAND  &kp CARET        &kp FSLH                             &kp BSLH        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN  &kp GREATER_THAN
-&kp AT     &kp HASH    &kp ASTERISK   &kp PLUS         &kp EQUAL                            &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI       &kp COLON
-&kp GRAVE  &kp TILDE   &kp MINUS      &kp EXCLAMATION  &kp QUESTION                         &kp PIPE        &kp LBKT              &kp RBKT               &kp SQT        &kp DOUBLE_QUOTES
-&trans     &trans      &trans         &trans           &trans        &trans      &kp COMMA  &kp PERIOD                                                                  &kp ESC
+&trans  &trans  &trans  &trans  &trans                      &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &kp C_AL_WWW
+&trans  &trans  &trans  &trans  &trans                      &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&trans  &trans  &trans  &trans  &trans                      &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &kp DOUBLE_QUOTES
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                               &kp ENTER
             >;
         };
 
@@ -247,18 +277,18 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &kp ENTER  &trans  &trans                                            &trans            &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans  &trans                                            &trans            &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans  &trans                                            &trans            &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans  &kp LS(LG(N5))  &kp LS(LG(N4))      &kp LC(DOWN)  &kp LC(UP_ARROW)                          &trans
+&trans  &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp K_MUTE  &kp C_VOLUME_UP      &trans  &trans                          &trans
             >;
         };
 
         CONFIG {
             bindings = <
-&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &trans                            &trans       &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans                            &trans       &trans  &trans  &trans  &trans
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &bootloader  &trans  &trans  &trans  &trans
+&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &trans                            &trans  &trans  &bootloader  &trans  &trans
+&trans          &trans        &trans        &trans        &trans                            &trans  &trans  &trans       &trans  &trans
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans  &trans  &trans       &trans  &trans
 &trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans                               &trans
             >;
         };
