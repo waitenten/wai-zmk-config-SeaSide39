@@ -242,6 +242,8 @@
             label = "TD_QT";
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp LS(NUMBER_2)>, <&kp RS(LEFT_BRACKET)>;
+
+            tapping-term-ms = <220>;
         };
 
         td_co: td_co {
@@ -252,6 +254,8 @@
                 <&kp SINGLE_QUOTE>,
                 <&kp SEMI>,
                 <&kp LS(INTERNATIONAL_3)>;
+
+            tapping-term-ms = <220>;
         };
 
         td_nm: td_nm {
@@ -259,6 +263,8 @@
             label = "TD_NM";
             #binding-cells = <0>;
             bindings = <&kp LS(EQUAL)>, <&kp EQUAL>;
+
+            tapping-term-ms = <220>;
         };
 
         td_sh_ej: td_sh_ej {
@@ -299,9 +305,9 @@
 
         SYMBOL {
             bindings = <
-&trans  &trans  &td_qt  &m_bracket   &kp BACKSLASH                              &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &none
-&trans  &trans  &td_co  &m_kako      &kp LS(N9)                                 &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&trans  &trans  &td_nm  &m_sbracket  &kp LS(BACKSLASH)                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &trans
+&trans  &trans  &trans  &m_bracket   &kp BACKSLASH                              &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &none
+&td_nm  &td_co  &td_qt  &m_kako      &kp LS(N9)                                 &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&trans  &trans  &trans  &m_sbracket  &kp LS(BACKSLASH)                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &trans
 &trans  &trans  &trans  &trans       &trans             &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &none
             >;
         };
