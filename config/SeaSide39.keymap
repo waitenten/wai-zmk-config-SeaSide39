@@ -179,10 +179,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_tap>,
                 <&kp RIGHT_BRACKET>,
                 <&macro_release>,
+                <&macro_tap>,
                 <&kp BACKSLASH>,
                 <&macro_release>,
+                <&macro_tap>,
                 <&kp LEFT_ARROW>,
                 <&macro_release>;
 
@@ -193,10 +196,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_tap>,
                 <&kp LS(N8)>,
                 <&macro_release>,
+                <&macro_tap>,
                 <&kp LS(N9)>,
                 <&macro_release>,
+                <&macro_tap>,
                 <&kp LEFT_ARROW>,
                 <&macro_release>;
 
@@ -207,10 +213,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LS(N8)>,
+                <&macro_tap>,
+                <&kp LS(RIGHT_BRACKET)>,
                 <&macro_release>,
-                <&kp LS(N9)>,
+                <&macro_tap>,
+                <&kp LS(BACKSLASH)>,
                 <&macro_release>,
+                <&macro_tap>,
                 <&kp LEFT_ARROW>,
                 <&macro_release>;
 
