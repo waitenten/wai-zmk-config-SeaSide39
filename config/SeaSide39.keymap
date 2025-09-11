@@ -101,9 +101,9 @@
             key-positions = <11 5>;
         };
 
-        do {
+        dr {
             bindings = <&kp DOLLAR>;
-            key-positions = <12 8>;
+            key-positions = <12 3>;
         };
 
         ye {
@@ -242,8 +242,8 @@
             label = "TD_L5_QT";
             #binding-cells = <0>;
             bindings =
-                <&lt 5 LS(N7)>,
-                <&kp LS(NUMBER_2)>,
+                <&lt 5 LS(NUMBER_2)>,
+                <&kp LS(N7)>,
                 <&kp RS(LEFT_BRACKET)>;
 
             tapping-term-ms = <225>;
@@ -305,18 +305,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <190>;
             flavor = "tap-preferred";
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings =
-                <&lt 5 LS(NUMBER_2)>,
-                <&kp LS(N7)>,
-                <&kp RS(LEFT_BRACKET)>;
-
-            tapping-term-ms = <225>;
         };
     };
 
