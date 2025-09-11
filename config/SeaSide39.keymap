@@ -243,7 +243,7 @@
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp LS(NUMBER_2)>, <&kp RS(LEFT_BRACKET)>;
 
-            tapping-term-ms = <220>;
+            tapping-term-ms = <225>;
         };
 
         td_co: td_co {
@@ -255,7 +255,7 @@
                 <&kp SEMI>,
                 <&kp LS(INTERNATIONAL_3)>;
 
-            tapping-term-ms = <230>;
+            tapping-term-ms = <240>;
         };
 
         td_nm: td_nm {
@@ -293,6 +293,15 @@
 
             tapping-term-ms = <180>;
         };
+
+        kp_m_l5: kp_m_l5 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KP_M_L5";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+        };
     };
 
     keymap {
@@ -300,10 +309,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W         &kp E  &kp R               &kp T                                                  &kp Y      &kp U    &kp I                &kp O       &kp P
-&kp A      &kp S         &kp D  &kp F               &kp G                                                  &kp H      &kp J    &kp K                &kp L       &kp MINUS
-&kp X      &kp Z         &kp C  &kp V               &kp B                                                  &kp N      &lt 5 M  &mt RIGHT_ALT COMMA  &kp PERIOD  &kp QUESTION
-&kp LCTRL  &kp LEFT_ALT  &mo 5  &lt 2 INT_MUHENKAN  &lt 1 SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &td_mo_in                                            &mt RCTRL ENTER
+&kp Q      &kp W         &kp E  &kp R               &kp T                                                  &kp Y      &kp U         &kp I                &kp O       &kp P
+&kp A      &kp S         &kp D  &kp F               &kp G                                                  &kp H      &kp J         &kp K                &kp L       &kp MINUS
+&kp X      &kp Z         &kp C  &kp V               &kp B                                                  &kp N      &kp_m_l5 5 M  &mt RIGHT_ALT COMMA  &kp PERIOD  &kp QUESTION
+&kp LCTRL  &kp LEFT_ALT  &mo 5  &lt 2 INT_MUHENKAN  &lt 1 SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &td_mo_in                                                 &mt RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
