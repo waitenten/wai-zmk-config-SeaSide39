@@ -255,7 +255,7 @@
                 <&kp SEMI>,
                 <&kp LS(INTERNATIONAL_3)>;
 
-            tapping-term-ms = <220>;
+            tapping-term-ms = <230>;
         };
 
         td_nm: td_nm {
@@ -272,6 +272,8 @@
             label = "TD_SH_EJ";
             #binding-cells = <0>;
             bindings = <&mt LSHFT LANGUAGE_2>, <&kp LANGUAGE_1>;
+
+            tapping-term-ms = <180>;
         };
 
         td_pi_co: td_pi_co {
