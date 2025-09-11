@@ -306,6 +306,18 @@
             tapping-term-ms = <190>;
             flavor = "tap-preferred";
         };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings =
+                <&lt 5 LS(NUMBER_2)>,
+                <&kp LS(N7)>,
+                <&kp RS(LEFT_BRACKET)>;
+
+            tapping-term-ms = <225>;
+        };
     };
 
     keymap {
@@ -324,8 +336,8 @@
 
         SYMBOL {
             bindings = <
-&kp LS(EQUAL)  &kp SINGLE_QUOTE         &kp LS(N7)            &none   &m_bracket                           &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &none
-&kp SLASH      &kp SEMICOLON            &kp LS(NUMBER_2)      &none   &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &none   &m_bracket                           &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &none
+&kp SLASH      &kp SINGLE_QUOTE         &kp LS(NUMBER_2)      &none   &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
 &kp EQUAL      &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &none   &m_sbracket                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &trans
 &trans         &trans                   &trans                &trans  &trans       &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &none
             >;
