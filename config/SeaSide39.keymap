@@ -279,6 +279,8 @@
             label = "TD_PI_CO";
             #binding-cells = <0>;
             bindings = <&kp KP_DOT>, <&kp COMMA>;
+
+            tapping-term-ms = <180>;
         };
 
         td_mo_in: td_mo_in {
@@ -286,6 +288,8 @@
             label = "TD_MO_IN";
             #binding-cells = <0>;
             bindings = <&lt 2 INT_HENKAN>, <&lt 1 INT_HENKAN>;
+
+            tapping-term-ms = <180>;
         };
     };
 
@@ -305,10 +309,10 @@
 
         SYMBOL {
             bindings = <
-&kp LS(EQUAL)  &kp SINGLE_QUOTE         &kp LS(N7)            &m_bracket   &kp BACKSLASH                              &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &none
-&kp SLASH      &kp SEMICOLON            &kp LS(NUMBER_2)      &m_kako      &kp LS(N9)                                 &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&kp EQUAL      &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket  &kp LS(BACKSLASH)                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &trans
-&trans         &trans                   &trans                &trans       &trans             &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &none
+&kp LS(EQUAL)  &kp SINGLE_QUOTE         &kp LS(N7)            &td_qt  &m_bracket                           &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &none
+&kp SLASH      &kp SEMICOLON            &kp LS(NUMBER_2)      &td_co  &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&kp EQUAL      &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &td_nm  &m_sbracket                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &trans
+&trans         &trans                   &trans                &trans  &trans       &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &none
             >;
         };
 
