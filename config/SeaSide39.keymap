@@ -165,6 +165,56 @@
             bindings = <&kp SLASH>;
             key-positions = <25 10>;
         };
+
+        one {
+            bindings = <&kp KP_N1>;
+            key-positions = <13 26>;
+        };
+
+        two {
+            bindings = <&kp KP_N2>;
+            key-positions = <13 27>;
+        };
+
+        three {
+            bindings = <&kp KP_N3>;
+            key-positions = <13 28>;
+        };
+
+        four {
+            bindings = <&kp KP_N4>;
+            key-positions = <13 16>;
+        };
+
+        five {
+            bindings = <&kp KP_NUMBER_5>;
+            key-positions = <13 17>;
+        };
+
+        six {
+            bindings = <&kp KP_NUMBER_6>;
+            key-positions = <13 18>;
+        };
+
+        seven {
+            bindings = <&kp KP_NUMBER_7>;
+            key-positions = <13 6>;
+        };
+
+        eight {
+            bindings = <&kp KP_NUMBER_8>;
+            key-positions = <13 7>;
+        };
+
+        nine {
+            bindings = <&kp KP_NUMBER_9>;
+            key-positions = <13 8>;
+        };
+
+        c_zero {
+            bindings = <&kp KP_N0>;
+            key-positions = <13 26 27>;
+        };
     };
 
     macros {
