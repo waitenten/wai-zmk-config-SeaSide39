@@ -294,13 +294,13 @@
             tapping-term-ms = <180>;
         };
 
-        kp_m_l5: kp_m_l5 {
+        kp_tr188: kp_tr188 {
             compatible = "zmk,behavior-hold-tap";
-            label = "KP_M_L5";
+            label = "KP_TR188";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <185>;
+            tapping-term-ms = <188>;
         };
     };
 
@@ -309,10 +309,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W         &kp E  &kp R               &kp T                                                  &kp Y      &kp U         &kp I                &kp O       &kp P
-&kp A      &kp S         &kp D  &kp F               &kp G                                                  &kp H      &kp J         &kp K                &kp L       &kp MINUS
-&kp X      &kp Z         &kp C  &kp V               &kp B                                                  &kp N      &kp_m_l5 5 M  &mt RIGHT_ALT COMMA  &kp PERIOD  &kp QUESTION
-&kp LCTRL  &kp LEFT_ALT  &mo 5  &lt 2 INT_MUHENKAN  &lt 1 SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &td_mo_in                                                 &mt RCTRL ENTER
+&kp Q      &kp W         &kp E  &kp R               &kp T                                                  &kp Y      &kp U          &kp I                &kp O       &kp P
+&kp A      &kp S         &kp D  &kp F               &kp G                                                  &kp H      &kp J          &kp K                &kp L       &kp MINUS
+&kp X      &kp Z         &kp C  &kp V               &kp B                                                  &kp N      &kp_tr188 5 M  &mt RIGHT_ALT COMMA  &kp PERIOD  &kp QUESTION
+&kp LCTRL  &kp LEFT_ALT  &mo 5  &lt 2 INT_MUHENKAN  &lt 1 SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &td_mo_in                                                  &mt RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
