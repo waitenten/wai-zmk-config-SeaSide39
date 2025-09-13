@@ -406,7 +406,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MO_IN";
             #binding-cells = <0>;
-            bindings = <&lt 2 INT_HENKAN>, <&lt 1 INT_HENKAN>;
+            bindings = <&lt 1 INT_HENKAN>, <&lt 2 INT_HENKAN>;
 
             tapping-term-ms = <180>;
         };
@@ -515,7 +515,7 @@
         mm_in_dn: mm_in_dn {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_DN";
-            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp DOWN>;
+            bindings = <&td_mo_in>, <&kp DOWN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
