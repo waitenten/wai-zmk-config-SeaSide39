@@ -484,6 +484,42 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        mm_la_ri: mm_la_ri {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_LA_RI";
+            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp RIGHT_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_in_le: mm_in_le {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_IN_LE";
+            bindings = <&kp_lt_tr190 2 INT_MUHENKAN>, <&kp LEFT_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_bs_up: mm_bs_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BS_UP";
+            bindings = <&mt RIGHT_SHIFT BACKSPACE>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_in_dn: mm_in_dn {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_IN_DN";
+            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -491,10 +527,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W      &kp E      &kp R                        &kp T                                                &kp Y             &kp U             &kp I                         &kp O       &kp P
-&kp A      &kp S      &kp D      &kp F                        &kp G                                                &kp H             &kp J             &kp K                         &kp L       &mm_mi_ub
-&kp X      &kp Z      &kp C      &kp V                        &kp B                                                &kp N             &kp_lt_tr190 5 M  &kp_mt_tr190 RIGHT_ALT COMMA  &kp PERIOD  &mm_qu_sl
-&mm_ct_nm  &mm_at_co  &mm_L5_qt  &kp_lt_tr190 2 INT_MUHENKAN  &kp SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &lt 1 INT_HENKAN                                                              &mm_en_bi
+&kp Q      &kp W      &kp E      &kp R      &kp T                                &kp Y      &kp U             &kp I                         &kp O       &kp P
+&kp A      &kp S      &kp D      &kp F      &kp G                                &kp H      &kp J             &kp K                         &kp L       &mm_mi_ub
+&kp X      &kp Z      &kp C      &kp V      &kp B                                &kp N      &kp_lt_tr190 5 M  &kp_mt_tr190 RIGHT_ALT COMMA  &kp PERIOD  &mm_qu_sl
+&mm_ct_nm  &mm_at_co  &mm_L5_qt  &mm_in_le  &kp SPACE  &mm_la_ri      &mm_bs_up  &mm_in_dn                                                              &mm_en_bi
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -502,9 +538,9 @@
 
         SYMBOL {
             bindings = <
-&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                           &kp RA(RIGHT)       &kp PAGE_UP     &kp UP_ARROW    &kp HOME         &none
+&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                           &kp RA(RIGHT)       &msc SCRL_UP    &kp UP_ARROW    &kp HOME         &none
 &none   &kp SLASH      &kp SINGLE_QUOTE         &kp LS(NUMBER_2)      &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                          &kp RC(F4)          &kp PAGE_DOWN   &kp F5          &kp END          &none
+&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                          &kp RC(F4)          &msc SCRL_DOWN  &kp F5          &kp END          &none
 &trans  &trans         &trans                   &trans                &trans       &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &trans
             >;
         };
