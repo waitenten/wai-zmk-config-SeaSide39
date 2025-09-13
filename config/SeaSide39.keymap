@@ -390,7 +390,7 @@
             #binding-cells = <0>;
             bindings = <&mt LSHFT LANGUAGE_2>, <&kp LANGUAGE_1>;
 
-            tapping-term-ms = <180>;
+            tapping-term-ms = <190>;
         };
 
         td_pi_co: td_pi_co {
