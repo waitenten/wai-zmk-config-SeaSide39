@@ -91,11 +91,6 @@
             key-positions = <26 27>;
         };
 
-        bi {
-            bindings = <&kp EXCL>;
-            key-positions = <24 7>;
-        };
-
         sy {
             bindings = <&kp HASH>;
             key-positions = <11 5>;
@@ -124,11 +119,6 @@
         at {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <10 4>;
-        };
-
-        ub {
-            bindings = <&kp LS(INTERNATIONAL_1)>;
-            key-positions = <24 6>;
         };
 
         lbrc {
@@ -161,59 +151,84 @@
             key-positions = <25 27>;
         };
 
-        na {
-            bindings = <&kp SLASH>;
-            key-positions = <25 10>;
-        };
-
         one {
             bindings = <&kp KP_N1>;
-            key-positions = <13 26>;
+            key-positions = <26 12>;
         };
 
         two {
             bindings = <&kp KP_N2>;
-            key-positions = <13 27>;
+            key-positions = <27 12>;
         };
 
         three {
             bindings = <&kp KP_N3>;
-            key-positions = <13 28>;
+            key-positions = <28 12>;
         };
 
         four {
             bindings = <&kp KP_N4>;
-            key-positions = <13 16>;
+            key-positions = <16 12>;
         };
 
         five {
             bindings = <&kp KP_NUMBER_5>;
-            key-positions = <13 17>;
+            key-positions = <17 12>;
         };
 
         six {
             bindings = <&kp KP_NUMBER_6>;
-            key-positions = <13 18>;
+            key-positions = <18 12>;
         };
 
         seven {
             bindings = <&kp KP_NUMBER_7>;
-            key-positions = <13 6>;
+            key-positions = <6 12>;
         };
 
         eight {
             bindings = <&kp KP_NUMBER_8>;
-            key-positions = <13 7>;
+            key-positions = <7 12>;
         };
 
         nine {
             bindings = <&kp KP_NUMBER_9>;
-            key-positions = <13 8>;
+            key-positions = <8 12>;
         };
 
         c_zero {
             bindings = <&kp KP_N0>;
-            key-positions = <13 26 27>;
+            key-positions = <26 27 12>;
+        };
+
+        kp_ap {
+            bindings = <&kp ASTRK>;
+            key-positions = <12 15>;
+        };
+
+        kp_sl {
+            bindings = <&kp KP_SLASH>;
+            key-positions = <12 5>;
+        };
+
+        kp_pl {
+            bindings = <&kp KP_PLUS>;
+            key-positions = <12 9>;
+        };
+
+        kp_mi {
+            bindings = <&kp KP_MINUS>;
+            key-positions = <12 19>;
+        };
+
+        kp_dt {
+            bindings = <&kp KP_DOT>;
+            key-positions = <12 29>;
+        };
+
+        kp_eq {
+            bindings = <&kp LS(MINUS)>;
+            key-positions = <12 25>;
         };
     };
 
