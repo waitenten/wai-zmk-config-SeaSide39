@@ -488,7 +488,7 @@
         mm_la_ri: mm_la_ri {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_LA_RI";
-            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp RIGHT_ARROW>;
+            bindings = <&td_sh_ej>, <&kp RIGHT_ARROW>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
