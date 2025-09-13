@@ -153,82 +153,137 @@
 
         one {
             bindings = <&kp KP_N1>;
-            key-positions = <26 13>;
+            key-positions = <26 34>;
         };
 
         two {
             bindings = <&kp KP_N2>;
-            key-positions = <27 13>;
+            key-positions = <27 34>;
         };
 
         three {
             bindings = <&kp KP_N3>;
-            key-positions = <28 13>;
+            key-positions = <28 34>;
         };
 
         four {
             bindings = <&kp KP_N4>;
-            key-positions = <16 13>;
+            key-positions = <16 34>;
         };
 
         five {
             bindings = <&kp KP_NUMBER_5>;
-            key-positions = <17 13>;
+            key-positions = <17 34>;
         };
 
         six {
             bindings = <&kp KP_NUMBER_6>;
-            key-positions = <18 13>;
+            key-positions = <18 34>;
         };
 
         seven {
             bindings = <&kp KP_NUMBER_7>;
-            key-positions = <6 13>;
+            key-positions = <6 34>;
         };
 
         eight {
             bindings = <&kp KP_NUMBER_8>;
-            key-positions = <7 13>;
+            key-positions = <7 34>;
         };
 
         nine {
             bindings = <&kp KP_NUMBER_9>;
-            key-positions = <8 13>;
+            key-positions = <8 34>;
         };
 
         c_zero {
             bindings = <&kp KP_N0>;
-            key-positions = <26 27 13>;
+            key-positions = <27 26 34>;
         };
 
         kp_ap {
             bindings = <&kp KP_ASTERISK>;
-            key-positions = <15 13>;
+            key-positions = <15 34>;
         };
 
         kp_sl {
             bindings = <&kp KP_SLASH>;
-            key-positions = <5 13>;
+            key-positions = <5 34>;
         };
 
         kp_pl {
             bindings = <&kp KP_PLUS>;
-            key-positions = <9 13>;
+            key-positions = <9 34>;
         };
 
         kp_mi {
             bindings = <&kp KP_MINUS>;
-            key-positions = <19 13>;
+            key-positions = <19 34>;
         };
 
         kp_dt {
             bindings = <&kp KP_DOT>;
-            key-positions = <29 13>;
+            key-positions = <29 34>;
         };
 
         kp_eq {
             bindings = <&kp LS(MINUS)>;
-            key-positions = <25 13>;
+            key-positions = <25 34>;
+        };
+
+        f2 {
+            bindings = <&kp F2>;
+            key-positions = <1 34>;
+        };
+
+        f3 {
+            bindings = <&kp F3>;
+            key-positions = <34 2>;
+        };
+
+        f4 {
+            bindings = <&kp F4>;
+            key-positions = <34 3>;
+        };
+
+        f5 {
+            bindings = <&kp F5>;
+            key-positions = <4 34>;
+        };
+
+        f6 {
+            bindings = <&kp F6>;
+            key-positions = <10 34>;
+        };
+
+        f7 {
+            bindings = <&kp F7>;
+            key-positions = <34 11>;
+        };
+
+        f8 {
+            bindings = <&kp F8>;
+            key-positions = <34 12>;
+        };
+
+        f9 {
+            bindings = <&kp F9>;
+            key-positions = <34 13>;
+        };
+
+        f10 {
+            bindings = <&kt F10>;
+            key-positions = <34 14>;
+        };
+
+        f11 {
+            bindings = <&kp F11>;
+            key-positions = <23 34>;
+        };
+
+        f12 {
+            bindings = <&kp F12>;
+            key-positions = <34 24>;
         };
     };
 
@@ -436,10 +491,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W      &kp E      &kp R                        &kp T                                                  &kp Y      &kp U             &kp I                         &kp O       &kp P
-&kp A      &kp S      &kp D      &kp F                        &kp G                                                  &kp H      &kp J             &kp K                         &kp L       &mm_mi_ub
-&kp X      &kp Z      &kp C      &kp V                        &kp B                                                  &kp N      &kp_lt_tr190 5 M  &kp_mt_tr190 RIGHT_ALT COMMA  &kp PERIOD  &mm_qu_sl
-&mm_ct_nm  &mm_at_co  &mm_L5_qt  &kp_lt_tr190 2 INT_MUHENKAN  &lt 1 SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &td_mo_in                                                              &mm_en_bi
+&kp Q      &kp W      &kp E      &kp R                        &kp T                                                &kp Y             &kp U             &kp I                         &kp O       &kp P
+&kp A      &kp S      &kp D      &kp F                        &kp G                                                &kp H             &kp J             &kp K                         &kp L       &mm_mi_ub
+&kp X      &kp Z      &kp C      &kp V                        &kp B                                                &kp N             &kp_lt_tr190 5 M  &kp_mt_tr190 RIGHT_ALT COMMA  &kp PERIOD  &mm_qu_sl
+&mm_ct_nm  &mm_at_co  &mm_L5_qt  &kp_lt_tr190 2 INT_MUHENKAN  &kp SPACE  &td_sh_ej      &mt RIGHT_SHIFT BACKSPACE  &lt 1 INT_HENKAN                                                              &mm_en_bi
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -456,10 +511,10 @@
 
         NUM {
             bindings = <
-&none    &kp F2   &kp F3  &kp F4  &kp F5                              &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
-&kp F6   &kp F7   &kp F8  &kp F9  &kp F10                             &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&kp F11  &kp F12  &none   &none   &none                               &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
-&trans   &trans   &trans  &trans  &trans   &trans      &kp BACKSPACE  &kp KP_NUMBER_0                                                     &trans
+&none   &kp F2  &kp F3  &kp F4   &kp F5                              &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                             &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
+&none   &none   &none   &kp F11  &kp F12                             &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
+&trans  &trans  &trans  &trans   &trans   &trans      &kp BACKSPACE  &kp KP_NUMBER_0                                                     &trans
             >;
         };
 
