@@ -91,9 +91,9 @@
             key-positions = <26 27>;
         };
 
-        sy {
+        ht {
             bindings = <&kp HASH>;
-            key-positions = <11 5>;
+            key-positions = <15 4>;
         };
 
         dr {
@@ -106,9 +106,9 @@
             key-positions = <2 5>;
         };
 
-        pa {
+        pt {
             bindings = <&kp PERCENT>;
-            key-positions = <10 9>;
+            key-positions = <9 4>;
         };
 
         ad {
@@ -538,9 +538,9 @@
 
         SYMBOL {
             bindings = <
-&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                           &kp RA(RIGHT)       &msc MOVE_Y(15)   &kp UP_ARROW    &kp HOME         &none
+&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                           &kp RA(RIGHT)       &msc MOVE_Y(10)   &kp UP_ARROW    &kp HOME         &none
 &none   &kp SLASH      &kp SINGLE_QUOTE         &kp LS(NUMBER_2)      &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                          &kp RC(F4)          &msc MOVE_Y(-15)  &kp F5          &kp END          &none
+&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                          &kp RC(F4)          &msc MOVE_Y(-10)  &kp F5          &kp END          &none
 &trans  &trans         &trans                   &trans                &trans       &trans      &kp DELETE  &kp INT_MUHENKAN                                                       &trans
             >;
         };
