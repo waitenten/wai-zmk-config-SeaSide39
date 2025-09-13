@@ -538,10 +538,10 @@
 
         SYMBOL {
             bindings = <
-&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                           &kp RA(RIGHT)       &msc SCRL_UP    &kp UP_ARROW    &kp HOME         &none
-&none   &kp SLASH      &kp SINGLE_QUOTE         &kp LS(NUMBER_2)      &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                          &kp RC(F4)          &msc SCRL_DOWN  &kp F5          &kp END          &none
-&trans  &trans         &trans                   &trans                &trans       &trans      &kp DELETE  &kp INT_MUHENKAN                                                     &trans
+&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                           &kp RA(RIGHT)       &msc MOVE_Y(15)   &kp UP_ARROW    &kp HOME         &none
+&none   &kp SLASH      &kp SINGLE_QUOTE         &kp LS(NUMBER_2)      &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                          &kp RC(F4)          &msc MOVE_Y(-15)  &kp F5          &kp END          &none
+&trans  &trans         &trans                   &trans                &trans       &trans      &kp DELETE  &kp INT_MUHENKAN                                                       &trans
             >;
         };
 
