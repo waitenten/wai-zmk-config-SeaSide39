@@ -228,7 +228,7 @@
 
         kp_eq {
             bindings = <&kp LS(MINUS)>;
-            key-positions = <25 37>;
+            key-positions = <25 37 26>;
         };
 
         f2 {
@@ -506,7 +506,7 @@
         mm_bs_up: mm_bs_up {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_BS_UP";
-            bindings = <&mt RIGHT_SHIFT BACKSPACE>, <&kp UP_ARROW>;
+            bindings = <&kp_mt_tr190 RIGHT_SHIFT BACKSPACE>, <&kp UP_ARROW>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -538,19 +538,19 @@
 
         SYMBOL {
             bindings = <
-&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                           &kp RA(RIGHT)       &msc MOVE_Y(10)   &kp UP_ARROW    &kp HOME         &none
-&none   &kp SLASH      &kp SINGLE_QUOTE         &kp LS(NUMBER_2)      &m_kako                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                          &kp RC(F4)          &msc MOVE_Y(-10)  &none           &kp END          &none
-&trans  &trans         &trans                   &trans                &trans       &trans      &kp DELETE  &kp INT_MUHENKAN                                                       &trans
+&none   &kp LS(EQUAL)  &kp SEMI                 &kp LS(N7)            &m_bracket                       &kp RA(RIGHT)       &msc MOVE_Y(10)   &kp UP_ARROW    &kp HOME         &none
+&none   &kp SLASH      &kp SINGLE_QUOTE         &kp LS(NUMBER_2)      &m_kako                          &kp RA(LEFT_ARROW)  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&none   &kp LS(EQUAL)  &kp LS(INTERNATIONAL_3)  &kp LS(LEFT_BRACKET)  &m_sbracket                      &kp RC(F4)          &msc MOVE_Y(-10)  &none           &kp END          &none
+&trans  &trans         &trans                   &trans                &trans       &trans      &trans  &trans                                                                 &trans
             >;
         };
 
         NUM {
             bindings = <
-&none   &kp F2  &kp F3  &kp F4   &kp F5                              &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
-&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                             &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&none   &none   &none   &kp F11  &kp F12                             &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
-&trans  &trans  &trans  &trans   &trans   &trans      &kp BACKSPACE  &kp KP_NUMBER_0                                                     &trans
+&none   &kp F2  &kp F3  &kp F4   &kp F5                       &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&kp F6  &kp F7  &kp F8  &kp F9   &kp F10                      &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
+&none   &none   &none   &kp F11  &kp F12                      &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
+&trans  &trans  &trans  &trans   &trans   &trans      &trans  &kp KP_NUMBER_0                                                     &trans
             >;
         };
 
