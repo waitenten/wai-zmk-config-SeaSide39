@@ -515,7 +515,7 @@
         mm_in_dn: mm_in_dn {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_DN";
-            bindings = <&td_mo_in>, <&kp DOWN>;
+            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp DOWN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
