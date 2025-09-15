@@ -424,7 +424,7 @@
         mm_in_le: mm_in_le {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_LE";
-            bindings = <&kp_lt_tr190 2 INT_MUHENKAN>, <&kp LEFT_ARROW>;
+            bindings = <&kp INT_MUHENKAN>, <&kp LEFT_ARROW>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -446,13 +446,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        num: num {
-            compatible = "zmk,behavior-key-toggle";
-            label = "NUM";
-            #binding-cells = <1>;
-            toggle-mode = "flip";
         };
     };
 
