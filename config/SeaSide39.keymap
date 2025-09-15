@@ -153,82 +153,82 @@
 
         one {
             bindings = <&kp KP_N1>;
-            key-positions = <26 37>;
+            key-positions = <26 36>;
         };
 
         two {
             bindings = <&kp KP_N2>;
-            key-positions = <27 37>;
+            key-positions = <27 36>;
         };
 
         three {
             bindings = <&kp KP_N3>;
-            key-positions = <28 37>;
+            key-positions = <28 36>;
         };
 
         four {
             bindings = <&kp KP_N4>;
-            key-positions = <16 37>;
+            key-positions = <16 36>;
         };
 
         five {
             bindings = <&kp KP_NUMBER_5>;
-            key-positions = <17 37>;
+            key-positions = <17 36>;
         };
 
         six {
             bindings = <&kp KP_NUMBER_6>;
-            key-positions = <18 37>;
+            key-positions = <18 36>;
         };
 
         seven {
             bindings = <&kp KP_NUMBER_7>;
-            key-positions = <6 37>;
+            key-positions = <6 36>;
         };
 
         eight {
             bindings = <&kp KP_NUMBER_8>;
-            key-positions = <7 37>;
+            key-positions = <7 36>;
         };
 
         nine {
             bindings = <&kp KP_NUMBER_9>;
-            key-positions = <8 37>;
+            key-positions = <8 36>;
         };
 
         c_zero {
             bindings = <&kp KP_N0>;
-            key-positions = <27 26 37>;
+            key-positions = <27 26 36>;
         };
 
         kp_ap {
             bindings = <&kp KP_ASTERISK>;
-            key-positions = <15 37>;
+            key-positions = <15 36>;
         };
 
         kp_sl {
             bindings = <&kp KP_SLASH>;
-            key-positions = <5 37>;
+            key-positions = <5 36 36>;
         };
 
         kp_pl {
             bindings = <&kp KP_PLUS>;
-            key-positions = <9 37>;
+            key-positions = <9 36>;
         };
 
         kp_mi {
             bindings = <&kp KP_MINUS>;
-            key-positions = <19 37>;
+            key-positions = <19 36>;
         };
 
         kp_dt {
             bindings = <&kp KP_DOT>;
-            key-positions = <29 37>;
+            key-positions = <29 36>;
         };
 
         kp_eq {
             bindings = <&kp LS(MINUS)>;
-            key-positions = <25 37 26>;
+            key-positions = <25 36>;
         };
 
         f2 {
@@ -408,7 +408,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MO_IN";
             #binding-cells = <0>;
-            bindings = <&lt 1 INT_HENKAN>, <&lt 2 INT_HENKAN>;
+            bindings = <&kp_lt_tr190 2 INT_HENKAN>, <&kp_lt_tr190 1 INT_HENKAN>;
 
             tapping-term-ms = <180>;
         };
@@ -517,7 +517,7 @@
         mm_in_dn: mm_in_dn {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_DN";
-            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp DOWN>;
+            bindings = <&td_mo_in>, <&kp DOWN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
