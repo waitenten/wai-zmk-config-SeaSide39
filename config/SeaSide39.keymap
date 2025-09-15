@@ -341,6 +341,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <190>;
             flavor = "hold-preferred";
+            require-prior-idle-ms = <50>;
         };
 
         kp_mt_tr190: kp_mt_tr190 {
@@ -441,6 +442,16 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NEW_BEHAVIOR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            flavor = "tap-preferred";
         };
     };
 
