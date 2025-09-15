@@ -86,11 +86,6 @@
             key-positions = <7 8>;
         };
 
-        zero {
-            bindings = <&kp KP_NUMBER_0>;
-            key-positions = <26 27>;
-        };
-
         ht {
             bindings = <&kp HASH>;
             key-positions = <15 4>;
@@ -208,7 +203,7 @@
 
         num {
             bindings = <&tog 2>;
-            key-positions = <26 27 37>;
+            key-positions = <26 27>;
         };
     };
 
