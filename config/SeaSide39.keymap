@@ -205,6 +205,11 @@
             bindings = <&kp F12>;
             key-positions = <34 24>;
         };
+
+        num {
+            bindings = <&tog 2>;
+            key-positions = <26 27 37>;
+        };
     };
 
     macros {
@@ -437,20 +442,17 @@
         mm_in_dn: mm_in_dn {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_DN";
-            bindings = <&td_mo_in>, <&kp DOWN>;
+            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp DOWN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NEW_BEHAVIOR";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <190>;
-            flavor = "tap-preferred";
+        num: num {
+            compatible = "zmk,behavior-key-toggle";
+            label = "NUM";
+            #binding-cells = <1>;
+            toggle-mode = "flip";
         };
     };
 
@@ -482,7 +484,7 @@
 &none   &kp F2  &kp F3  &kp F4   &kp F5                       &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &kp F6  &kp F7  &kp F8  &kp F9   &kp F10                      &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
 &none   &none   &none   &kp F11  &kp F12                      &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
-&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans                                                              &trans
+&trans  &trans  &trans  &trans   &trans   &trans      &trans  &kp KP_NUMBER_0                                                     &trans
             >;
         };
 
