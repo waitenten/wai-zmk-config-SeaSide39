@@ -205,6 +205,21 @@
             bindings = <&tog 2>;
             key-positions = <26 27>;
         };
+
+        m_k1 {
+            bindings = <&m_bracket>;
+            key-positions = <2 3 4>;
+        };
+
+        m_k2 {
+            bindings = <&m_kako>;
+            key-positions = <12 13 14>;
+        };
+
+        m_k3 {
+            bindings = <&m_sbracket>;
+            key-positions = <22 23 24>;
+        };
     };
 
     macros {
