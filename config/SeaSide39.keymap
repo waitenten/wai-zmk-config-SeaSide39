@@ -370,7 +370,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_AT_CO";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_ALT SINGLE_QUOTE>, <&kp LS(INTERNATIONAL_3)>;
+            bindings =
+                <&kp_mt_tr190 LEFT_ALT SINGLE_QUOTE>,
+                <&kp LS(INTERNATIONAL_3)>;
 
             tapping-term-ms = <200>;
         };
@@ -388,7 +390,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SH_EJ";
             #binding-cells = <0>;
-            bindings = <&mt LSHFT LANGUAGE_2>, <&kp LANGUAGE_1>;
+            bindings = <&kp_mt_tr190 LSHFT LANGUAGE_2>, <&kp LANGUAGE_1>;
 
             tapping-term-ms = <190>;
         };
@@ -479,7 +481,7 @@
         mm_ct_nm: mm_ct_nm {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CT_NM";
-            bindings = <&mt LCTRL LS(EQUAL)>, <&kp EQUAL>;
+            bindings = <&kp_mt_tr190 LCTRL LS(EQUAL)>, <&kp EQUAL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
