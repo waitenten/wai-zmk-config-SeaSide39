@@ -151,86 +151,6 @@
             key-positions = <25 27>;
         };
 
-        one {
-            bindings = <&kp KP_N1>;
-            key-positions = <26 36>;
-        };
-
-        two {
-            bindings = <&kp KP_N2>;
-            key-positions = <27 36>;
-        };
-
-        three {
-            bindings = <&kp KP_N3>;
-            key-positions = <28 36>;
-        };
-
-        four {
-            bindings = <&kp KP_N4>;
-            key-positions = <16 36>;
-        };
-
-        five {
-            bindings = <&kp KP_NUMBER_5>;
-            key-positions = <17 36>;
-        };
-
-        six {
-            bindings = <&kp KP_NUMBER_6>;
-            key-positions = <18 36>;
-        };
-
-        seven {
-            bindings = <&kp KP_NUMBER_7>;
-            key-positions = <6 36>;
-        };
-
-        eight {
-            bindings = <&kp KP_NUMBER_8>;
-            key-positions = <7 36>;
-        };
-
-        nine {
-            bindings = <&kp KP_NUMBER_9>;
-            key-positions = <8 36>;
-        };
-
-        c_zero {
-            bindings = <&kp KP_N0>;
-            key-positions = <27 26 36>;
-        };
-
-        kp_ap {
-            bindings = <&kp KP_ASTERISK>;
-            key-positions = <15 36>;
-        };
-
-        kp_sl {
-            bindings = <&kp KP_SLASH>;
-            key-positions = <5 36 36>;
-        };
-
-        kp_pl {
-            bindings = <&kp KP_PLUS>;
-            key-positions = <9 36>;
-        };
-
-        kp_mi {
-            bindings = <&kp KP_MINUS>;
-            key-positions = <19 36>;
-        };
-
-        kp_dt {
-            bindings = <&kp KP_DOT>;
-            key-positions = <29 36>;
-        };
-
-        kp_eq {
-            bindings = <&kp LS(MINUS)>;
-            key-positions = <25 36>;
-        };
-
         f2 {
             bindings = <&kp F2>;
             key-positions = <1 34>;
@@ -552,7 +472,7 @@
 &none   &kp F2  &kp F3  &kp F4   &kp F5                       &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &kp F6  &kp F7  &kp F8  &kp F9   &kp F10                      &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
 &none   &none   &none   &kp F11  &kp F12                      &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
-&trans  &trans  &trans  &trans   &trans   &trans      &trans  &kp KP_NUMBER_0                                                     &trans
+&trans  &trans  &trans  &trans   &trans   &trans      &trans  &trans                                                              &trans
             >;
         };
 
