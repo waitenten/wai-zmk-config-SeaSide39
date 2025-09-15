@@ -356,6 +356,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <190>;
             flavor = "hold-preferred";
+            require-prior-idle-ms = <20>;
         };
 
         mm_mi_ub: mm_mi_ub {
@@ -424,7 +425,7 @@
         mm_in_le: mm_in_le {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_LE";
-            bindings = <&kp INT_MUHENKAN>, <&kp LEFT_ARROW>;
+            bindings = <&kp_lt_tr190 2 INT_MUHENKAN>, <&kp LEFT_ARROW>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
