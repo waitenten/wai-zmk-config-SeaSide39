@@ -203,7 +203,7 @@
 
         num {
             bindings = <&tog 2>;
-            key-positions = <26 27>;
+            key-positions = <26 25>;
         };
 
         m_k1 {
@@ -366,7 +366,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <190>;
             flavor = "hold-preferred";
-            require-prior-idle-ms = <20>;
+            require-prior-idle-ms = <80>;
         };
 
         mm_mi_ub: mm_mi_ub {
