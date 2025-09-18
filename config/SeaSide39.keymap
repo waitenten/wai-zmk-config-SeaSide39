@@ -203,7 +203,7 @@
 
         num {
             bindings = <&tog 2>;
-            key-positions = <26 25 37>;
+            key-positions = <26 37 27>;
         };
 
         m_k1 {
