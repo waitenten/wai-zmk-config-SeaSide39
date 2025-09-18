@@ -366,7 +366,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <190>;
             flavor = "hold-preferred";
-            require-prior-idle-ms = <80>;
+            quick-tap-ms = <80>;
         };
 
         mm_mi_ub: mm_mi_ub {
