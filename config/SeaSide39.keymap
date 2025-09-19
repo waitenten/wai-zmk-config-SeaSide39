@@ -296,7 +296,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L5_QT";
             #binding-cells = <0>;
-            bindings = <&lt 5 LS(NUMBER_2)>, <&kp RS(LEFT_BRACKET)>;
+            bindings = <&lt 5 LS(NUMBER_2)>, <&kp RS(N7)>;
 
             tapping-term-ms = <200>;
         };
@@ -305,9 +305,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_AT_CO";
             #binding-cells = <0>;
-            bindings =
-                <&kp_mt_tr190 LEFT_ALT SINGLE_QUOTE>,
-                <&kp LS(INTERNATIONAL_3)>;
+            bindings = <&kp_mt_tr190 LEFT_ALT SINGLE_QUOTE>, <&kp SEMI>;
 
             tapping-term-ms = <200>;
         };
@@ -400,7 +398,7 @@
         mm_L5_qt: mm_L5_qt {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_L5_QT";
-            bindings = <&td_l5_qt>, <&kp LS(NUMBER_7)>;
+            bindings = <&td_l5_qt>, <&kp LS(LEFT_BRACKET)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -409,7 +407,7 @@
         mm_at_co: mm_at_co {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_AT_CO";
-            bindings = <&td_at_co>, <&kp SEMI>;
+            bindings = <&td_at_co>, <&kp LS(INTERNATIONAL_3)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
