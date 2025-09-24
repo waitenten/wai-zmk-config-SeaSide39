@@ -439,7 +439,7 @@
         mm_in_le: mm_in_le {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_LE";
-            bindings = <&kt INT_MUHENKAN>, <&kp LEFT_ARROW>;
+            bindings = <&kp_lt_tr190 1 INT_MUHENKAN>, <&kp LEFT_ARROW>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
