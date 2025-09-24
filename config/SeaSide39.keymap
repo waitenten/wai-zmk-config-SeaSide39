@@ -203,7 +203,7 @@
 
         num {
             bindings = <&tog 2>;
-            key-positions = <37 17 16>;
+            key-positions = <37 17 16 18>;
         };
 
         m_k1 {
@@ -219,6 +219,11 @@
         m_k3 {
             bindings = <&m_sbracket>;
             key-positions = <22 23 24>;
+        };
+
+        zoro {
+            bindings = <&kp KP_N0>;
+            key-positions = <26 27>;
         };
     };
 
