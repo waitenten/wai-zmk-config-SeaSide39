@@ -225,6 +225,11 @@
             bindings = <&kp KP_N0>;
             key-positions = <26 27>;
         };
+
+        arrow {
+            bindings = <&to 1>;
+            key-positions = <6 7 8 37>;
+        };
     };
 
     macros {
@@ -478,12 +483,12 @@
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        SYMBOL {
+        ARROW {
             bindings = <
 &none   &none   &none   &none   &none                       &kp RC(F4)           &msc MOVE_Y(15)   &kp UP_ARROW    &kp HOME         &kp PAGE_UP
 &none   &none   &none   &none   &none                       &kp RA(RIGHT_ARROW)  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
 &none   &none   &none   &none   &none                       &kp RA(LEFT_ARROW)   &msc MOVE_Y(-15)  &none           &kp END          &kp PAGE_DOWN
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                                  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                                  &to 0
             >;
         };
 
@@ -496,7 +501,7 @@
             >;
         };
 
-        ARROW {
+        nouse1 {
             bindings = <
 &kp ESCAPE      &mkp MB4                &kp UP_ARROW    &mkp MB5                 &trans                       &kp LG(LEFT_ARROW)          &kp LA(LEFT_ARROW)      &kp UP_ARROW    &kp RA(RIGHT_ARROW)      &kp RG(RIGHT_ARROW)
 &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END                      &kp LC(LS(TAB))             &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp RC(TAB)
@@ -507,7 +512,7 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        MOUSE {
+        nouse2 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
