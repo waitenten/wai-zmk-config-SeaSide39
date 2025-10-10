@@ -1,8 +1,8 @@
+#include <behaviors/rgbled_widget.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <behaviors/rgbled_widget.dtsi>
 
 #define MOUSE 4
 #define SCROLL 5
@@ -251,6 +251,11 @@
             bindings = <&kp PAGE_DOWN>;
             key-positions = <20 21 22 23>;
         };
+
+        bi {
+            bindings = <&kp LS(NUMBER_1)>;
+            key-positions = <24 7>;
+        };
     };
 
     macros {
@@ -498,7 +503,7 @@
 &kp Q      &kp W      &kp E      &kp R      &kp T                                &kp Y      &kp U             &kp I                         &kp O       &kp P
 &kp A      &kp S      &kp D      &kp F      &kp G                                &kp H      &kp J             &kp K                         &kp L       &mm_mi_ub
 &kp X      &kp Z      &kp C      &kp V      &kp B                                &kp N      &kp_lt_tr190 5 M  &kp_mt_tr190 RIGHT_ALT COMMA  &kp PERIOD  &mm_qu_sl
-&mm_ct_nm  &mm_at_co  &mm_L5_qt  &mm_in_le  &kp SPACE  &mm_la_ri      &mm_bs_up  &mm_in_dn                                                              &mm_en_bi
+&mm_ct_nm  &mm_at_co  &mm_L5_qt  &mm_in_le  &kp SPACE  &mm_la_ri      &mm_bs_up  &mm_in_dn                                                              &kp_mt_tr190 RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -553,10 +558,10 @@
 
         CONFIG {
             bindings = <
-&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &ind_bat                            &ind_bat  &trans  &bootloader  &trans  &trans
-&trans          &trans        &trans        &trans        &trans                            &trans  &trans  &trans       &trans  &trans
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans  &trans  &trans       &trans  &trans
-&trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans                               &trans
+&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &ind_bat                          &ind_bat  &trans  &bootloader  &trans  &trans
+&trans          &trans        &trans        &trans        &trans                            &trans    &trans  &trans       &trans  &trans
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans    &trans  &trans       &trans  &trans
+&trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans                                 &trans
             >;
         };
     };
