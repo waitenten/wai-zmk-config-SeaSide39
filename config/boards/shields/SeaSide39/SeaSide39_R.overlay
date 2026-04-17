@@ -18,9 +18,10 @@
 
 /* Trackball のリスナー */ 
 / {
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
+    &trackball_listener {
+    layers-1 {
+        layers = <1>;
+        input-processors = <&zip_slow>;
     };
 };
 
