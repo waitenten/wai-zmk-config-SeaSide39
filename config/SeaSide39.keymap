@@ -222,8 +222,8 @@
             key-positions = <22 23 24>;
         };
 
-        zoro {
-            bindings = <&kp KP_N0>;
+        equal {
+            bindings = <&kp LS(MINUS)>;
             key-positions = <26 27>;
         };
 
@@ -328,11 +328,11 @@
             tapping-term-ms = <200>;
         };
 
-        td_l5_qt: td_l5_qt {
+        td_l4_qt: td_l4_qt {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_L5_QT";
+            label = "TD_L4_QT";
             #binding-cells = <0>;
-            bindings = <&lt 5 LS(NUMBER_2)>, <&kp RS(N7)>;
+            bindings = <&lt 4 LS(NUMBER_2)>, <&kp RS(N7)>;
 
             tapping-term-ms = <200>;
         };
@@ -431,10 +431,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_L5_qt: mm_L5_qt {
+        mm_L4_qt: mm_L4_qt {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_L5_QT";
-            bindings = <&td_l5_qt>, <&kp LS(LEFT_BRACKET)>;
+            label = "MM_L4_QT";
+            bindings = <&td_l4_qt>, <&kp LS(LEFT_BRACKET)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -493,6 +493,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&lt 4 LS(NUMBER_2)>, <&kp RS(N7)>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -503,7 +512,7 @@
 &kp Q      &kp W      &kp E      &kp R      &kp T                                &kp Y      &kp U             &kp I                         &kp O       &kp P
 &kp A      &kp S      &kp D      &kp F      &kp G                                &kp H      &kp J             &kp K                         &kp L       &mm_mi_ub
 &kp X      &kp Z      &kp C      &kp V      &kp B                                &kp N      &kp_lt_tr190 5 M  &kp_mt_tr190 RIGHT_ALT COMMA  &kp PERIOD  &mm_qu_sl
-&mm_ct_nm  &mm_at_co  &mm_L5_qt  &mm_in_le  &kp SPACE  &mm_la_ri      &mm_bs_up  &mm_in_dn                                                              &kp_mt_tr190 RCTRL ENTER
+&mm_ct_nm  &mm_at_co  &mm_L4_qt  &mm_in_le  &kp SPACE  &mm_la_ri      &mm_bs_up  &mm_in_dn                                                              &kp_mt_tr190 RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -520,10 +529,10 @@
 
         NUM {
             bindings = <
-&none   &none   &none   &none   &m_bracket                       &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
-&none   &none   &none   &none   &m_kako                          &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&none   &none   &none   &none   &m_sbracket                      &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
-&trans  &trans  &trans  &trans  &kp ENTER    &trans      &trans  &kp KP_NUMBER_0                                                     &to 0
+&none   &none   &kp INTERNATIONAL_3  &kp AMPERSAND     &kp PERCENT                           &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&none   &none   &kp DOLLAR           &kp LS(NUMBER_1)  &kp LEFT_BRACKET                      &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
+&none   &none   &none                &kp HASH          &m_sbracket                           &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
+&trans  &trans  &trans               &trans            &kp ENTER         &trans      &trans  &kp KP_NUMBER_0                                                     &to 0
             >;
         };
 
