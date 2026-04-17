@@ -75,6 +75,6 @@
 &trackball_listener {
     layers-1 {
         layers = <1>;
-        input-processors = <&zip_slow 1 4>;
+        input-processors = <&zip_slow 1 2>;
     };
 };
