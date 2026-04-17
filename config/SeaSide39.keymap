@@ -87,36 +87,6 @@
             key-positions = <7 8>;
         };
 
-        ht {
-            bindings = <&kp HASH>;
-            key-positions = <15 4>;
-        };
-
-        dr {
-            bindings = <&kp DOLLAR>;
-            key-positions = <12 3>;
-        };
-
-        ye {
-            bindings = <&kp INTERNATIONAL_3>;
-            key-positions = <2 5>;
-        };
-
-        pt {
-            bindings = <&kp PERCENT>;
-            key-positions = <9 4>;
-        };
-
-        ad {
-            bindings = <&kp LS(N6)>;
-            key-positions = <10 12>;
-        };
-
-        at {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <10 4>;
-        };
-
         lbrc {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <2 4>;
@@ -230,31 +200,6 @@
         arrow {
             bindings = <&tog 1>;
             key-positions = <6 7 8 37>;
-        };
-
-        home {
-            bindings = <&kp HOME>;
-            key-positions = <4 16 17>;
-        };
-
-        end {
-            bindings = <&kp END>;
-            key-positions = <16 17 14>;
-        };
-
-        pageup {
-            bindings = <&kp PAGE_UP>;
-            key-positions = <12 13 5>;
-        };
-
-        pagedown {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <12 13 15>;
-        };
-
-        bi {
-            bindings = <&kp LS(NUMBER_1)>;
-            key-positions = <24 7>;
         };
     };
 
@@ -529,9 +474,9 @@
 
         NUM {
             bindings = <
-&none   &none   &kp INTERNATIONAL_3  &kp AMPERSAND     &kp PERCENT                           &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&none   &none   &kp INTERNATIONAL_3  &kp LS(NUMBER_6)  &kp PERCENT                           &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &none   &none   &kp DOLLAR           &kp LS(NUMBER_1)  &kp LEFT_BRACKET                      &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&none   &none   &none                &kp HASH          &m_sbracket                           &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
+&none   &none   &none                &kp HASH          &none                                 &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
 &trans  &trans  &trans               &trans            &kp ENTER         &trans      &trans  &kp KP_NUMBER_0                                                     &to 0
             >;
         };
