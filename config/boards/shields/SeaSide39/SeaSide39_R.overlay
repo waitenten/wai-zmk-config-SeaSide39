@@ -57,33 +57,24 @@
     };
 };
 
-/* スロー移動用input-processor */
 / {
     zip_slow: zip_slow {
         compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <0>;
+        #input-processor-cells = <2>;
         type = <INPUT_EV_REL>;
-        codes = <INPUT_REL_X>, <INPUT_REL_Y>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
         track-remainders;
-        x-sensitivity = <1>;
-        y-sensitivity = <1>;
-        x-sensitivity-divisor = <4>;
-        y-sensitivity-divisor = <4>;
     };
-};
 
-/* Trackball のリスナー */
-/ {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
 };
 
-/* レイヤー1の時だけスロー */
 &trackball_listener {
     layers-1 {
         layers = <1>;
-        input-processors = <&zip_slow>;
+        input-processors = <&zip_slow INPUT_REL_X 4>, <&zip_slow INPUT_REL_Y 4>;
     };
 };
