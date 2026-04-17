@@ -7,22 +7,13 @@
 
 /* キーマトリクスの設定 */
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
-};
-
-/* Trackball のリスナー */ 
-/ {
-    &trackball_listener {
-    layers-1 {
-        layers = <1>;
-        input-processors = <&zip_slow>;
-    };
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
 };
 
 /* SPI 設定 */
@@ -34,7 +25,6 @@
                 <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
-
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
@@ -56,19 +46,18 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        // automouse-layer = <4>; //ここをコメントアウトするとオートマウスレイヤーがオフになる
+        // automouse-layer = <4>;
         scroll-layers = <5>;
     };
 };
-#include <input/processors.dtsi>
 
+/* スロー移動用input-processor */
 / {
     zip_slow: zip_slow {
         compatible = "zmk,input-processor-scaler";
@@ -76,19 +65,25 @@
         type = <INPUT_EV_REL>;
         codes = <INPUT_REL_X>, <INPUT_REL_Y>;
         track-remainders;
-        x-sensitivity = <1>;  /* 分子 */
-        y-sensitivity = <1>;  /* 分子 */
-        x-sensitivity-divisor = <4>;  /* 分母 → 1/4速 */
+        x-sensitivity = <1>;
+        y-sensitivity = <1>;
+        x-sensitivity-divisor = <4>;
         y-sensitivity-divisor = <4>;
     };
 };
 
-&trackball_listener {
-    input-processors = <>;  /* デフォルト：通常速度 */
-    
-    layers-1 {
-        layers = <1>;  /* ARROWレイヤー */
-        input-processors = <&zip_slow>;
+/* Trackball のリスナー */
+/ {
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
     };
 };
 
+/* レイヤー1の時だけスロー */
+&trackball_listener {
+    layers-1 {
+        layers = <1>;
+        input-processors = <&zip_slow>;
+    };
+};
