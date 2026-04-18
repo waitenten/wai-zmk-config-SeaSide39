@@ -382,7 +382,7 @@
         mm_la_ri: mm_la_ri {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_LA_RI";
-            bindings = <&td_sh_ej>, <&kp RIGHT_ARROW>;
+            bindings = <&td_sh_ej>, <&kp RC(X)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -391,7 +391,7 @@
         mm_in_le: mm_in_le {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_LE";
-            bindings = <&kp_lt_tr190 2 INT_MUHENKAN>, <&kp LEFT_ARROW>;
+            bindings = <&kp_lt_tr190 2 INT_MUHENKAN>, <&kp RC(Z)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -400,7 +400,7 @@
         mm_bs_up: mm_bs_up {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_BS_UP";
-            bindings = <&kp_mt_tr190 RIGHT_SHIFT BACKSPACE>, <&kp UP_ARROW>;
+            bindings = <&kp_mt_tr190 RIGHT_SHIFT BACKSPACE>, <&kp RC(C)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -409,7 +409,7 @@
         mm_in_dn: mm_in_dn {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_DN";
-            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp DOWN>;
+            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp RC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
