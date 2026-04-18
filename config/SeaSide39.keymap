@@ -264,15 +264,6 @@
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
         td_l4_qt: td_l4_qt {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L4_QT";
@@ -291,15 +282,6 @@
             tapping-term-ms = <200>;
         };
 
-        td_ct_nm: td_ct_nm {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_CT_NM";
-            #binding-cells = <0>;
-            bindings = <&mt LCTRL LS(EQUAL)>, <&kp EQUAL>;
-
-            tapping-term-ms = <190>;
-        };
-
         td_sh_ej: td_sh_ej {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SH_EJ";
@@ -314,15 +296,6 @@
             label = "TD_PI_CO";
             #binding-cells = <0>;
             bindings = <&kp KP_DOT>, <&kp COMMA>;
-
-            tapping-term-ms = <180>;
-        };
-
-        td_mo_in: td_mo_in {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_MO_IN";
-            #binding-cells = <0>;
-            bindings = <&kp_lt_tr190 2 INT_HENKAN>, <&kp_lt_tr190 1 INT_HENKAN>;
 
             tapping-term-ms = <180>;
         };
@@ -362,15 +335,6 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_QU_SL";
             bindings = <&kp LS(SLASH)>, <&kp SLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_en_bi: mm_en_bi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_EN_BI";
-            bindings = <&kp_mt_tr190 RCTRL ENTER>, <&kp LS(N1)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -437,15 +401,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&lt 4 LS(NUMBER_2)>, <&kp RS(N7)>;
-
-            tapping-term-ms = <200>;
         };
     };
 
