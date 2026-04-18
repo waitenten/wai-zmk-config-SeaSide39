@@ -216,10 +216,16 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
+                <&kp LANG1>,
+                <&macro_release>,
+                <&macro_tap>,
                 <&kp RIGHT_BRACKET>,
                 <&macro_release>,
                 <&macro_tap>,
                 <&kp BACKSLASH>,
+                <&macro_release>,
+                <&macro_tap>,
+                <&kp ENTER>,
                 <&macro_release>,
                 <&macro_tap>,
                 <&kp LEFT_ARROW>,
@@ -232,6 +238,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_tap>,
+                <&kp LANGUAGE_2>,
+                <&macro_release>,
                 <&macro_tap>,
                 <&kp LS(N8)>,
                 <&macro_release>,
@@ -249,6 +258,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_tap>,
+                <&kp LANGUAGE_2>,
+                <&macro_release>,
                 <&macro_tap>,
                 <&kp LS(RIGHT_BRACKET)>,
                 <&macro_release>,
