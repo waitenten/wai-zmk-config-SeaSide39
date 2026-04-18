@@ -280,7 +280,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L4_QT";
             #binding-cells = <0>;
-            bindings = <&lt 3 LS(NUMBER_2)>, <&kp RS(N7)>;
+            bindings = <&lt 5 LS(NUMBER_2)>, <&kp RS(N7)>;
 
             tapping-term-ms = <200>;
         };
