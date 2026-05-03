@@ -391,7 +391,7 @@
         mm_in_le: mm_in_le {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_LE";
-            bindings = <&kp_lt_tr190 2 INT_MUHENKAN>, <&kp RC(Z)>;
+            bindings = <&mo 2>, <&kp RC(Z)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -409,7 +409,7 @@
         mm_in_dn: mm_in_dn {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_IN_DN";
-            bindings = <&kp_lt_tr190 1 INT_HENKAN>, <&kp RC(V)>;
+            bindings = <&lt 1 ENTER>, <&kp RC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -421,10 +421,10 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W      &kp E      &kp R             &kp T                                &kp Y        &kp U             &kp I      &kp O                          &kp P
-&kp A      &kp S      &kp D      &kp F             &kp G                                &kp H        &kp_lt_tr190 4 J  &kp K      &kp L                          &mm_mi_ub
-&kp X      &kp Z      &kp C      &kp_lt_tr190 4 V  &kp B                                &kp N        &kp_lt_tr190 5 M  &kp COMMA  &kp_mt_tr190 RIGHT_ALT PERIOD  &mm_qu_sl
-&mm_ct_nm  &mm_at_co  &mm_L5_qt  &mm_in_le         &kp SPACE  &mm_la_ri      &mm_bs_up  &lt 1 ENTER                                                              &kp_mt_tr190 RCTRL ENTER
+&kp Q      &kp W      &kp E      &kp R             &kp T                                &kp Y      &kp U             &kp I      &kp O                          &kp P
+&kp A      &kp S      &kp D      &kp F             &kp G                                &kp H      &kp_lt_tr190 4 J  &kp K      &kp L                          &mm_mi_ub
+&kp X      &kp Z      &kp C      &kp_lt_tr190 4 V  &kp B                                &kp N      &kp_lt_tr190 5 M  &kp COMMA  &kp_mt_tr190 RIGHT_ALT PERIOD  &mm_qu_sl
+&mm_ct_nm  &mm_at_co  &mm_L5_qt  &mm_in_le         &kp SPACE  &mm_la_ri      &mm_bs_up  &mm_in_dn                                                              &kp_mt_tr190 RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -432,10 +432,10 @@
 
         ARROW {
             bindings = <
-&none   &none   &none   &none   &none                                              &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
-&none   &none   &none   &none   &none                                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&none   &none   &none   &none   &none                                              &kp RA(RIGHT)       &mo 5           &kp ESCAPE      &none            &kp PAGE_DOWN
-&trans  &trans  &trans  &trans  &kp INTERNATIONAL_4  &kt INT_MUHENKAN      &trans  &trans                                                               &to 0
+&none  &none  &none  &none  &none                                             &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
+&none  &none  &none  &none  &none                                             &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
+&none  &none  &none  &none  &none                                             &kp RA(RIGHT)       &mo 5           &kp ESCAPE      &none            &kp PAGE_DOWN
+&none  &none  &none  &none  &kp INTERNATIONAL_4  &kt INT_MUHENKAN      &none  &none                                                                &to 0
             >;
         };
 
