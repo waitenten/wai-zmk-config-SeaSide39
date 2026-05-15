@@ -453,7 +453,7 @@
             bindings = <
 &none   &none   &kp INTERNATIONAL_3  &kp LS(NUMBER_6)  &kp PERCENT                           &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &none   &none   &kp DOLLAR           &kp LS(NUMBER_1)  &kp LEFT_BRACKET                      &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&none   &none   &none                &kp HASH          &none                                 &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
+&none   &none   &none                &kp HASH          &none                                 &kp LS(EQUAL)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_pi_co
 &trans  &trans  &trans               &trans            &kp ENTER         &trans      &trans  &kp KP_NUMBER_0                                                     &to 0
             >;
         };
@@ -471,19 +471,19 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                        &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans                        &trans    &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans                        &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &mkp MB5  &mkp MB4                                &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans                 &trans  &trans  &trans             &mo 6                                        &mo 6            &trans  &trans  &trans  &trans
-&trans                 &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
-&trans                 &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
-&kp LA(RS(SEMICOLON))  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &kp K_CALC  &kp PRINTSCREEN                          &trans
+&trans             &trans  &trans  &trans             &mo 6                                        &mo 6            &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
+&kp LA(SEMICOLON)  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &kp K_CALC  &kp PRINTSCREEN                          &trans
             >;
         };
 
