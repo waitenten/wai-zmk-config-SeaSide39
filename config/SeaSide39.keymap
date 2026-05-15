@@ -538,7 +538,7 @@
         mac_altkey: mac_altkey {
             compatible = "zmk,behavior-mod-morph";
             label = "MAC_ALTKEY";
-            bindings = <&td_coln>, <&kp LS(RIGHT_BRACKET)>;
+            bindings = <&td_coln>, <&kp LS(INTERNATIONAL_3)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -572,7 +572,7 @@
             bindings = <
 &none   &none   &kp INTERNATIONAL_3  &kp LS(NUMBER_6)  &kp PERCENT                           &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &none   &none   &kp DOLLAR           &kp LS(NUMBER_1)  &kp LEFT_BRACKET                      &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&none   &none   &kp RIGHT_BRACKET    &kp HASH          &kp LS(INT1)                          &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_num_comm
+&none   &none   &kp INT1             &kp HASH          &kp LS(INT1)                          &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_num_comm
 &trans  &trans  &trans               &trans            &kp ENTER         &trans      &trans  &kp KP_NUMBER_0                                                     &to 0
             >;
         };
