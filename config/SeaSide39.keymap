@@ -493,7 +493,7 @@
         mac_d_l3_henk: mac_d_l3_henk {
             compatible = "zmk,behavior-mod-morph";
             label = "MAC_D_L3_HENK";
-            bindings = <&lt 3 INT_HENKAN>, <&kp RG(V)>;
+            bindings = <&lt 3 SPACE>, <&kp RG(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
