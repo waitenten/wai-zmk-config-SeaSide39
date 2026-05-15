@@ -297,6 +297,48 @@
 
             label = "M_SBRACKET";
         };
+
+        bt0_win: bt0towin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&bt BT_SEL 0>,
+                <&macro_release>,
+                <&macro_tap>,
+                <&to 0>,
+                <&macro_release>;
+
+            label = "BT0TOWIN";
+        };
+
+        bt1_mac: bt1_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&bt BT_SEL 1>,
+                <&macro_release>,
+                <&macro_tap>,
+                <&to 1>,
+                <&macro_release>;
+
+            label = "BT1_MAC";
+        };
+
+        bt4_win: bt4_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&bt BT_SEL 4>,
+                <&macro_release>,
+                <&macro_tap>,
+                <&to 0>,
+                <&macro_release>;
+
+            label = "BT4_WIN";
+        };
     };
 
     behaviors {
@@ -549,8 +591,8 @@
         CONFIG {
             bindings = <
 &bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &ind_bat                          &ind_bat  &trans  &bootloader  &trans  &trans
-&trans          &trans        &trans        &trans        &trans                            &trans    &trans  &trans       &trans  &trans
 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans    &trans  &trans       &trans  &trans
+&bt0_win        &bt1_mac      &none         &none         &bt4_win                          &trans    &trans  &trans       &trans  &trans
 &trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans                                 &trans
             >;
         };
