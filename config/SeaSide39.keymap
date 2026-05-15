@@ -201,6 +201,16 @@
             bindings = <&tog 1>;
             key-positions = <6 7 8 37>;
         };
+
+        WIN {
+            bindings = <&mo 0>;
+            key-positions = <1 7 25>;
+        };
+
+        MAC {
+            bindings = <&mo 1>;
+            key-positions = <10 22 26>;
+        };
     };
 
     macros {
