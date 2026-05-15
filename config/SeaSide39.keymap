@@ -430,7 +430,7 @@
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        ARROW {
+        MAC {
             bindings = <
 &none  &none  &none  &none  &none                                             &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
 &none  &none  &none  &none  &none                                             &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
@@ -448,7 +448,7 @@
             >;
         };
 
-        nouse1 {
+        ARROW {
             bindings = <
 &kp ESCAPE      &mkp MB4                &kp UP_ARROW    &mkp MB5                 &trans                       &kp LG(LEFT_ARROW)          &kp LA(LEFT_ARROW)      &kp UP_ARROW    &kp RA(RIGHT_ARROW)      &kp RG(RIGHT_ARROW)
 &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END                      &kp LC(LS(TAB))             &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp RC(TAB)
@@ -459,7 +459,7 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        nouse2 {
+        nouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
@@ -470,10 +470,10 @@
 
         SCROLL {
             bindings = <
-&trans                &trans  &trans  &trans             &mo 6                                    &mo 6   &trans  &trans  &trans  &trans
-&trans                &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
-&trans                &trans  &trans  &trans             &trans                                   &trans  &trans  &trans  &trans  &trans
-&kp LA(SINGLE_QUOTE)  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &trans  &trans                          &trans
+&trans                 &trans  &trans  &trans             &mo 6                                        &mo 6            &trans  &trans  &trans  &trans
+&trans                 &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
+&trans                 &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
+&kp LA(RS(SEMICOLON))  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &kp K_CALC  &kp PRINTSCREEN                          &trans
             >;
         };
 
