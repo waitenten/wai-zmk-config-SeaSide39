@@ -21,3 +21,10 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 7
 endif
+
+if SHIELD_SeaSide39_R || SHIELD_SeaSide39_L
+config ZMK_SPLIT
+    default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+endif
