@@ -32,5 +32,3 @@ include:
 
   - board: seeeduino_xiao_ble
     shield: settings_reset
-
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
