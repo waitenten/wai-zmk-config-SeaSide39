@@ -3,3 +3,21 @@ config SHIELD_SeaSide39_R
 
 config SHIELD_SeaSide39_L
     def_bool $(shields_list_contains,SeaSide39_L)
+
+config SHIELD_SeaSide39_dongle
+    def_bool $(shields_list_contains,SeaSide39_dongle)
+
+if SHIELD_SeaSide39_dongle
+config ZMK_KEYBOARD_NAME
+    default "SeaSide39"
+config ZMK_SPLIT
+    default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+config BT_MAX_CONN
+    default 7
+config BT_MAX_PAIRED
+    default 7
+endif
