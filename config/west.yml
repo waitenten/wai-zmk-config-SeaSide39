@@ -1,22 +1,23 @@
-manifest:
-  remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: badjeff
-      url-base: https://github.com/badjeff
-    - name: caksoylar
-      url-base: https://github.com/caksoylar
-  projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: v0.3
-      import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: badjeff
-      repo-path: zmk-pmw3610-driver
-      revision: main
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: v0.3
-  self:
-    path: config
+CONFIG_NFCT_PINS_AS_GPIOS=y
+CONFIG_ZMK_BATTERY_REPORTING=y
+CONFIG_RGBLED_WIDGET=y
+CONFIG_RGBLED_WIDGET_BATTERY_LEVEL_HIGH=40
+CONFIG_RGBLED_WIDGET_BATTERY_LEVEL_CRITICAL=20
+CONFIG_BT_CTLR_TX_PWR_PLUS_4=y
+
+# ZMK公式マウス・インプット機能の有効化
+CONFIG_ZMK_MOUSE=y
+CONFIG_SPI=y
+CONFIG_INPUT=y
+
+# badjeff版 PMW3610 "ALT" ドライバを有効化
+CONFIG_PMW3610_ALT=y
+
+# すべての設定名の「PMW3610」のあとに「_ALT」を付与
+CONFIG_PMW3610_ALT_CPI=800
+CONFIG_PMW3610_ALT_ORIENTATION_0=y
+CONFIG_PMW3610_ALT_INVERT_X=n
+CONFIG_PMW3610_ALT_INVERT_Y=n
+
+# 起動時のハードウェア初期化スタック対策ディレイ
+CONFIG_PMW3610_ALT_INIT_POWER_UP_EXTRA_DELAY_MS=1000
