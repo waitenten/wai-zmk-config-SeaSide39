@@ -11,9 +11,9 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-    - name: badjeff_pmw3610
+    - name: zmk-pmw3610-driver
       remote: badjeff
-      repo: zmk-pmw3610-driver
+      repo-path: zmk-pmw3610-driver
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
