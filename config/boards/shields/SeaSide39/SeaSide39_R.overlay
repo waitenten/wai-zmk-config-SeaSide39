@@ -64,10 +64,7 @@
     };
 };
 
-
-/* 最新のZMK公式インプットフレームワークによるリスナー定義 */
 / {
-    /* 動きを少し滑らか/緩やかにするスケーラー */
     zip_slow: zip_slow {
         compatible = "zmk,input-processor-scaler";
         #input-processor-cells = <2>;
@@ -76,12 +73,10 @@
         track-remainders;
     };
 
-    /* トラックボールの入力をシステムに届ける最新のリスナー */
-    trackball_listener {
+    /* Peripheralの入力をCentral（ドングル）へ中継する */
+    trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        
-        /* 通常時（デフォルト）の処理 */
         input-processors = <&zip_slow 2 3>;
     };
 };
