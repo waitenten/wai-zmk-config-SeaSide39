@@ -73,13 +73,18 @@
         track-remainders;
     };
 
+    /* keymapバインディング用ダミー（peripheral側では何もしない） */
+    pd1: virtual_input {
+        compatible = "zmk,virtual-input";
+    };
+
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_slow 2 3>;
     };
 
-    trackball_relay: trackball_relay {
+    input_relay_config_102 {
         compatible = "zmk,split-peripheral-input-relay";
         device = <&trackball>;
         relay-channel = <102>;
