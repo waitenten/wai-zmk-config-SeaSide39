@@ -75,6 +75,8 @@
     };
 };
 
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 / {
     trackball_virtual: trackball_virtual {
         compatible = "zmk,virtual-device";
