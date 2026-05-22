@@ -366,7 +366,7 @@
             #binding-cells = <0>;
             bindings = <&mt_tr190 LSHFT LANGUAGE_2>, <&kp LANGUAGE_1>;
 
-            tapping-term-ms = <220>;
+            tapping-term-ms = <190>;
         };
 
         td_num_comm: td_num_comm {
