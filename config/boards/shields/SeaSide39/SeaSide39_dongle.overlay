@@ -88,7 +88,13 @@
     };
 
     trackball_central_listener: trackball_central_listener {
-        compatible = "zmk,input-listener";
-        device = <&pd1>;
+    compatible = "zmk,input-listener";
+    device = <&pd1>;
+
+    scroll {
+        layers = <5>;
+        input-processors =
+            <&zip_xy_scaler 1 8>,
+            <&zip_xy_to_scroll_mapper>;
     };
 };
