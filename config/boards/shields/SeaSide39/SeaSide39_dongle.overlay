@@ -74,3 +74,21 @@
         >;
     };
 };
+
+/ {
+    trackball_virtual: trackball_virtual {
+        compatible = "zmk,virtual-device";
+        evt-type = <INPUT_EV_REL>;
+    };
+
+    trackball_relay_receiver: trackball_relay_receiver {
+        compatible = "zmk,split-peripheral-input-relay";
+        device = <&trackball_virtual>;
+        relay-channel = <102>;
+    };
+
+    trackball_central_listener: trackball_central_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_virtual>;
+    };
+};
