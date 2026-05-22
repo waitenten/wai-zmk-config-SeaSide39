@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
     chosen {
@@ -75,22 +76,19 @@
     };
 };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
 / {
-    trackball_virtual: trackball_virtual {
-        compatible = "zmk,virtual-device";
-        evt-type = <INPUT_EV_REL>;
+    pd1: virtual_input {
+        compatible = "zmk,virtual-input";
     };
 
-    trackball_relay_receiver: trackball_relay_receiver {
+    input_relay_config_102 {
         compatible = "zmk,split-peripheral-input-relay";
-        device = <&trackball_virtual>;
+        device = <&pd1>;
         relay-channel = <102>;
     };
 
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball_virtual>;
+        device = <&pd1>;
     };
 };
