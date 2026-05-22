@@ -72,7 +72,6 @@
         track-remainders;
     };
 
-    /* keymapバインディング用ダミー（peripheral側では何もしない） */
     pd1: virtual_input {
         compatible = "zmk,virtual-input";
     };
@@ -81,11 +80,6 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_slow 2 3>;
-
-        scroll {
-            layers = <5>;
-            input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_to_scroll_mapper>;
-        };
     };
 
     input_relay_config_102 {
