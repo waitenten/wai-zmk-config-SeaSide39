@@ -88,6 +88,14 @@
         relay-channel = <102>;
     };
 
+    zip_scroll_invert: zip_scroll_invert {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL>;
+        track-remainders;
+    };
+
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
         device = <&pd1>;
@@ -96,7 +104,8 @@
             layers = <5>;
             input-processors =
                 <&zip_xy_scaler 1 8>,
-                <&zip_xy_to_scroll_mapper_inverted>;
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_invert (-1) 1>;
         };
     };
 };
