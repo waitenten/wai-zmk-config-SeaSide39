@@ -77,7 +77,10 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_slow 2 3>;
-        /* ドングルへ中継する */
-        zmk,split-peripheral-input-relay;
+    };
+
+    trackball_relay: trackball_relay {
+        compatible = "zmk,split-peripheral-input-relay";
+        device = <&trackball>;
     };
 };
