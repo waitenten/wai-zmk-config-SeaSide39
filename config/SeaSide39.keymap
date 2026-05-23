@@ -174,13 +174,8 @@
             key-positions = <22 23 24>;
         };
 
-        equal {
-            bindings = <&kp LS(MINUS)>;
-            key-positions = <26 27>;
-        };
-
         arrow {
-            bindings = <&tog 1>;
+            bindings = <&tog 3>;
             key-positions = <6 7 8 37>;
         };
 
@@ -428,7 +423,7 @@
         r_sft_ej: r_sft_ej {
             compatible = "zmk,behavior-mod-morph";
             label = "R_SFT_EJ";
-            bindings = <&mt LEFT_SHIFT LANG2>, <&kp RC(LANG1)>;
+            bindings = <&mt LEFT_SHIFT LANG2>, <&kp LANG1>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -437,7 +432,7 @@
         l_l3: l_l3 {
             compatible = "zmk,behavior-mod-morph";
             label = "L_L3";
-            bindings = <&mo 3>, <&kp RC(Z)>;
+            bindings = <&mo 3>, <&kp LC(Z)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -455,7 +450,7 @@
         d_l3_henk: d_l3_henk {
             compatible = "zmk,behavior-mod-morph";
             label = "D_L3_HENK";
-            bindings = <&lt 3 INT_HENKAN>, <&mo 2>;
+            bindings = <&lt 3 SPACE>, <&kt LC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -523,6 +518,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        mins_l2: mins_l2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINS_L2";
+            bindings = <&mo 2>, <&kp LC(X)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -530,10 +534,10 @@
 
         default_layer {
             bindings = <
-&kp Q     &kp W    &kp E   &kp R          &kp T                                  &kp Y       &kp U          &kp I      &kp O                       &kp P
-&kp A     &kp S    &kp D   &lt_tr190 4 F  &kp G                                  &kp H       &lt_tr190 4 J  &kp K      &kp L                       &minus_ub
-&kp X     &kp Z    &kp C   &lt_tr190 5 V  &kp B                                  &kp N       &lt_tr190 5 M  &kp COMMA  &mt_tr190 RIGHT_ALT PERIOD  &question
-&ctrlkey  &altkey  &fnkey  &l_l3          &lt 2 SPACE  &r_sft_ej      &u_sft_bs  &d_l3_henk                                                        &mt_tr190 RCTRL ENTER
+&kp Q     &kp W    &kp E   &kp R          &kp T                               &kp Y       &kp U          &kp I      &kp O                       &kp P
+&kp A     &kp S    &kp D   &lt_tr190 4 F  &kp G                               &kp H       &lt_tr190 4 J  &kp K      &kp L                       &minus_ub
+&kp X     &kp Z    &kp C   &lt_tr190 5 V  &kp B                               &kp N       &lt_tr190 5 M  &kp COMMA  &mt_tr190 RIGHT_ALT PERIOD  &question
+&ctrlkey  &altkey  &fnkey  &l_l3          &mins_l2  &r_sft_ej      &u_sft_bs  &d_l3_henk                                                        &mt_tr190 RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -552,17 +556,17 @@
             bindings = <
 &none  &none  &kp INTERNATIONAL_3  &kp LS(NUMBER_6)  &kp PERCENT                         &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &none  &none  &kp DOLLAR           &kp LS(NUMBER_1)  &kp LEFT_BRACKET                    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&none  &none  &none                &kp HASH          &kp LS(INT1)                        &kp LS(KP_N0)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_num_comm
-&none  &none  &none                &none             &kp ENTER         &none      &none  &none                                                               &to 0
+&none  &none  &none                &kp HASH          &kp LS(INT1)                        &kp LS(MINUS)    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_num_comm
+&none  &none  &none                &none             &kp ENTER         &none      &none  &kp KP_N0                                                           &to 0
             >;
         };
 
         ARROW {
             bindings = <
-&none  &none  &none  &none  &none                              &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
-&none  &none  &none  &none  &none                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN
-&none  &none  &none  &none  &none                              &kp RA(RIGHT)       &mo 5           &none           &none            &kp LC(LS(T))
-&none  &none  &none  &none  &none  &none      &kp RIGHT_SHIFT  &kp RCTRL                                                            &to 0
+&none  &none  &none  &none  &none                               &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
+&none  &none  &none  &none  &none                               &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN
+&none  &none  &none  &none  &none                               &kp RA(RIGHT)       &mo 5           &none           &none            &kp LC(LS(T))
+&none  &none  &none  &none  &none  &none      &kp INT_MUHENKAN  &kp INT_HENKAN                                                       &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
