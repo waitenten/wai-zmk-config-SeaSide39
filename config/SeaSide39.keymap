@@ -429,10 +429,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        l_l3: l_l3 {
+        l_l3_tab: l_l3_tab {
             compatible = "zmk,behavior-mod-morph";
-            label = "L_L3";
-            bindings = <&mo 3>, <&kp LC(Z)>;
+            label = "L_L3_TAB";
+            bindings = <&lt 3 TAB>, <&kp LC(Z)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -537,7 +537,7 @@
 &kp Q     &kp W    &kp E   &kp R          &kp T                               &kp Y       &kp U          &kp I      &kp O                       &kp P
 &kp A     &kp S    &kp D   &lt_tr190 4 F  &kp G                               &kp H       &lt_tr190 4 J  &kp K      &kp L                       &minus_ub
 &kp X     &kp Z    &kp C   &lt_tr190 5 V  &kp B                               &kp N       &lt_tr190 5 M  &kp COMMA  &mt_tr190 RIGHT_ALT PERIOD  &question
-&ctrlkey  &altkey  &fnkey  &l_l3          &mins_l2  &r_sft_ej      &u_sft_bs  &d_l3_henk                                                        &mt_tr190 RCTRL ENTER
+&ctrlkey  &altkey  &fnkey  &l_l3_tab      &mins_l2  &r_sft_ej      &u_sft_bs  &d_l3_henk                                                        &mt_tr190 RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
