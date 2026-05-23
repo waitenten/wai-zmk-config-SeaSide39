@@ -69,26 +69,6 @@
             key-positions = <7 17>;
         };
 
-        up {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <6 8>;
-        };
-
-        dn {
-            bindings = <&kp DOWN>;
-            key-positions = <16 18>;
-        };
-
-        le {
-            bindings = <&kp LEFT_ARROW>;
-            key-positions = <6 7>;
-        };
-
-        ri {
-            bindings = <&kp RIGHT>;
-            key-positions = <7 8>;
-        };
-
         lbrc {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <2 4>;
@@ -580,8 +560,8 @@
         ARROW {
             bindings = <
 &none  &none  &none  &none  &none                              &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
-&none  &none  &none  &none  &none                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RS(RC(T))
-&none  &none  &none  &none  &none                              &kp RA(RIGHT)       &mo 5           &kp ESCAPE      &none            &kp PAGE_DOWN
+&none  &none  &none  &none  &none                              &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN
+&none  &none  &none  &none  &none                              &kp RA(RIGHT)       &mo 5           &none           &none            &kp LC(LS(T))
 &none  &none  &none  &none  &none  &none      &kp RIGHT_SHIFT  &kp RCTRL                                                            &to 0
             >;
 
@@ -599,19 +579,19 @@
 
         SCROLL {
             bindings = <
-&trans             &trans  &trans  &trans             &mo 6                                        &mo 6            &trans  &trans  &trans  &trans
-&trans             &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
-&trans             &trans  &trans  &trans             &trans                                       &trans           &trans  &trans  &trans  &trans
-&kp LA(SEMICOLON)  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &kp K_CALC  &kp PRINTSCREEN                          &trans
+&trans             &trans  &trans  &trans             &mo 6                                   &mo 6            &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans             &trans                                  &trans           &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans             &trans                                  &trans           &trans  &trans  &trans  &trans
+&kp LA(SEMICOLON)  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &none  &kp PRINTSCREEN                          &trans
             >;
         };
 
         CONFIG {
             bindings = <
-&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &ind_bat                          &ind_bat  &trans  &bootloader  &trans  &trans
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans    &trans  &trans       &trans  &trans
-&bt0_win        &bt1_mac      &none         &none         &bt4_win                          &trans    &trans  &trans       &trans  &trans
-&trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans                                 &trans
+&bt BT_CLR_ALL  &bt BT_CLR    &bootloader   &none         &ind_bat                                  &ind_bat  &none  &bootloader  &none  &none
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &none     &none  &none        &none  &none
+&bt0_win        &bt1_mac      &none         &none         &bt4_win                                  &none     &none  &none        &none  &none
+&none           &none         &none         &none         &none         &sys_reset      &sys_reset  &none                                &none
             >;
         };
     };
