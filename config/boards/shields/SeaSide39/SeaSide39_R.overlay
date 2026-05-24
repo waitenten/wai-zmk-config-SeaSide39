@@ -5,7 +5,6 @@
     col-offset = <6>;
 };
 
-/* キーマトリクスの設定 */
 &kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
@@ -16,7 +15,6 @@
         ;
 };
 
-/* SPI 設定 */
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -35,10 +33,8 @@
     };
 };
 
-/* シリアルを無効化 */
 &xiao_serial { status = "disabled"; };
 
-/* SPI デバイス (トラックボール) */
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -46,14 +42,12 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
         cpi = <385>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
@@ -63,21 +57,7 @@
     };
 };
 
-/ {
-    zip_slow: zip_slow {
-        compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <2>;
-        type = <INPUT_EV_REL>;
-        codes = <INPUT_REL_X INPUT_REL_Y>;
-    };
-
-    pd1: virtual_input {
-        compatible = "zmk,virtual-input";
-    };
-
-    input_relay_config_102 {
-        compatible = "zmk,split-peripheral-input-relay";
-        device = <&trackball>;
-        relay-channel = <102>;
-    };
-};
+&trackball_split {
+    device = <&trackball>;
+    input-processors = <&zip_xy_scaler 2 3>;
+};m
