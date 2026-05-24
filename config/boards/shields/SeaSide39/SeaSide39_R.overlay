@@ -75,12 +75,6 @@
         compatible = "zmk,virtual-input";
     };
 
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_slow 2 3>;
-    };
-
     input_relay_config_102 {
         compatible = "zmk,split-peripheral-input-relay";
         device = <&trackball>;
