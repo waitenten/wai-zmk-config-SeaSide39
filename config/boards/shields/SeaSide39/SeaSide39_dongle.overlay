@@ -2,6 +2,7 @@
 #include <physical_layouts.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+#include "SeaSide39.dtsi"
 
 / {
     chosen {
@@ -75,18 +76,6 @@
             RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)     RC(3,7) RC(3,6)                         RC(3,10)
         >;
     };
-};
-
-/ {
-    pd1: virtual_input {
-        compatible = "zmk,virtual-input";
-    };
-
-    input_relay_config_102 {
-        compatible = "zmk,split-peripheral-input-relay";
-        device = <&pd1>;
-        relay-channel = <102>;
-    };
 
     zip_scroll_invert: zip_scroll_invert {
         compatible = "zmk,input-processor-scaler";
@@ -95,17 +84,16 @@
         codes = <INPUT_REL_WHEEL>;
         track-remainders;
     };
+};
 
-    trackball_central_listener: trackball_central_listener {
-        compatible = "zmk,input-listener";
-        device = <&pd1>;
+&trackball_listener {
+    status = "okay";
 
-        scroll {
-            layers = <5>;
-            input-processors =
-                <&zip_xy_scaler 1 8>,
-                <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_invert (-1) 1>;
-        };
+    scroll {
+        layers = <5>;
+        input-processors =
+            <&zip_xy_scaler 1 8>,
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_invert (-1) 1>;
     };
 };
