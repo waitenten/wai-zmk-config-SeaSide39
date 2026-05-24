@@ -86,6 +86,14 @@
         };
     };
 
+    zip_slow: zip_slow {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+        track-remainders;
+    };
+
     zip_scroll_invert: zip_scroll_invert {
         compatible = "zmk,input-processor-scaler";
         #input-processor-cells = <2>;
@@ -97,7 +105,7 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-        input-processors = <&zip_xy_scaler 4 3>;
+        input-processors = <&zip_slow 4 3>;
 
         scroll {
             layers = <5>;
