@@ -66,7 +66,6 @@
             compatible = "zmk,input-split";
             reg = <0>;
             device = <&trackball>;
-            input-processors = <&zip_xy_scaler 2 3>;
         };
     };
 };
