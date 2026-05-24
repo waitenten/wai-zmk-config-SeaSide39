@@ -450,7 +450,7 @@
         d_l3_henk: d_l3_henk {
             compatible = "zmk,behavior-mod-morph";
             label = "D_L3_HENK";
-            bindings = <&lt 3 SPACE>, <&kp LC(V)>;
+            bindings = <&lt 3 INT_HENKAN>, <&kp LC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
