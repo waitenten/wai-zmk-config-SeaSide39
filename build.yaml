@@ -16,19 +16,15 @@
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: corne_left_with_logging
 #
----
 include:
   - board: seeeduino_xiao_ble
     shield: SeaSide39_dongle rgbled_adapter
     snippet: studio-rpc-usb-uart
-
   - board: seeeduino_xiao_ble
     shield: SeaSide39_R rgbled_adapter
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_USB_LOGGING=y
   - board: seeeduino_xiao_ble
     shield: SeaSide39_L rgbled_adapter
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-
   - board: seeeduino_xiao_ble
     shield: settings_reset
