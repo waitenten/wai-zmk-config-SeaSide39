@@ -2,7 +2,6 @@
 #include <physical_layouts.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
-#include "SeaSide39.dtsi"
 
 / {
     chosen {
@@ -77,6 +76,16 @@
         >;
     };
 
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
     zip_scroll_invert: zip_scroll_invert {
         compatible = "zmk,input-processor-scaler";
         #input-processor-cells = <2>;
@@ -84,16 +93,17 @@
         codes = <INPUT_REL_WHEEL>;
         track-remainders;
     };
-};
 
-&trackball_listener {
-    status = "okay";
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_split>;
 
-    scroll {
-        layers = <5>;
-        input-processors =
-            <&zip_xy_scaler 1 8>,
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_invert (-1) 1>;
+        scroll {
+            layers = <5>;
+            input-processors =
+                <&zip_xy_scaler 1 8>,
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_invert (-1) 1>;
+        };
     };
 };
