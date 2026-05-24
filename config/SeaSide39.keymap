@@ -522,7 +522,7 @@
         mins_l2: mins_l2 {
             compatible = "zmk,behavior-mod-morph";
             label = "MINS_L2";
-            bindings = <&mo 2>, <&kp LC(X)>;
+            bindings = <&lt 2 SPACE>, <&kp LC(X)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
