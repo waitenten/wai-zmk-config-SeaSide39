@@ -6,20 +6,26 @@ manifest:
       url-base: https://github.com/badjeff
     - name: caksoylar
       url-base: https://github.com/caksoylar
-
+    - name: kot149
+      url-base: https://github.com/kot149
+    - name: ssbb
+      url-base: https://github.com/ssbb
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
-
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
-
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
+    - name: zmk-listeners
+      remote: ssbb
+      revision: v1
   self:
     path: config
