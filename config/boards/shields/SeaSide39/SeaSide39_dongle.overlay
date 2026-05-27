@@ -2,6 +2,7 @@
 #include <physical_layouts.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+#include <mouse-gesture.dtsi>
 
 / {
     chosen {
@@ -101,11 +102,42 @@
         codes = <INPUT_REL_WHEEL>;
         track-remainders;
     };
+zip_mouse_gesture {
+        stroke-size = <150>;
+        idle-timeout-ms = <100>;
+        enable-eager-mode;
+
+        go_default_up {
+            pattern = <GESTURE_UP>;
+            bindings = <&to 0>;
+        };
+        go_default_down {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&to 0>;
+        };
+        go_default_left {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&to 0>;
+        };
+        go_default_right {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&to 0>;
+        };
+    };
+
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+
+        num_gesture {
+            layers = <2>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+    };
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-        input-processors = <&zip_slow 7 6>;
+        input-processors = <&zip_mouse_gesture &zip_slow 7 6>;
 
         mouse-layer {
             layers = <4>;
