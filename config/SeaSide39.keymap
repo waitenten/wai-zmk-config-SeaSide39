@@ -200,6 +200,26 @@
             key-positions = <15 16>;
             layers = <1>;
         };
+
+        up {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <6 8>;
+        };
+
+        dw {
+            bindings = <&kp DOWN>;
+            key-positions = <16 18>;
+        };
+
+        le {
+            bindings = <&kp LEFT>;
+            key-positions = <6 7>;
+        };
+
+        ri {
+            bindings = <&kp RIGHT>;
+            key-positions = <7 8>;
+        };
     };
 
     macros {
