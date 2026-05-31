@@ -1,7 +1,6 @@
 #include "SeaSide39.dtsi"
 
 &kscan0 {
-        wakeup-source;
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
             , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
