@@ -612,7 +612,7 @@
 
         CONFIG {
             bindings = <
-&none  &none  &sys_reset  &none  &ind_bat                    &ind_bat  &none  &sys_reset  &none  &none
+&sys_reset  &none  &sys_reset  &none  &ind_bat                    &ind_bat  &none  &sys_reset  &none  &none
 &none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
 &none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
 &none  &none  &none       &none  &none     &none      &none  &none                               &none
