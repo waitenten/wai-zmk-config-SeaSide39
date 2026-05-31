@@ -4,8 +4,8 @@
  *
  * キーを押すとLeft/Rightのバッテリー残量をキーストロークとして送信する: "L85 R72"
  * - ドングル（Central）はバッテリーなしのため、Left/Right両方をペリフェラルから取得
- * - Left  = peripheral index 0
- * - Right = peripheral index 1
+ * - zmk_peripheral_battery_state_changed イベントを購読してキャッシュする
+ * - source: 0 = Left, 1 = Right
  * - 出力文字はアルファベット大文字と数字のみ（JIS環境での記号問題を回避）
  */
 
@@ -18,29 +18,53 @@
 #include <drivers/behavior.h>
 #include <zmk/behavior.h>
 #include <zmk/endpoints.h>
+#include <zmk/event_manager.h>
+#include <zmk/events/battery_state_changed.h>
 #include <zmk/hid.h>
 #include <zmk/keymap.h>
-#include <zmk/split/bluetooth/central.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 /* キーストローク間のディレイ（ms）。文字落ちする場合は値を大きくする */
 #define KEYSTROKE_DELAY_MS 30
 
+/* ペリフェラルのバッテリーキャッシュ [0]=Left, [1]=Right */
+static uint8_t peripheral_battery[2] = {0, 0};
+static bool peripheral_battery_valid[2] = {false, false};
+
+/* zmk_peripheral_battery_state_changed イベントを購読してキャッシュ */
+static int battery_event_listener(const zmk_event_t *eh)
+{
+    const struct zmk_peripheral_battery_state_changed *ev =
+        as_zmk_peripheral_battery_state_changed(eh);
+    if (ev == NULL) {
+        return ZMK_EV_EVENT_BUBBLE;
+    }
+    if (ev->source < 2) {
+        peripheral_battery[ev->source] = ev->state_of_charge;
+        peripheral_battery_valid[ev->source] = true;
+        LOG_DBG("Peripheral %d battery: %d%%", ev->source, ev->state_of_charge);
+    }
+    return ZMK_EV_EVENT_BUBBLE;
+}
+
+ZMK_LISTENER(battery_type_listener, battery_event_listener);
+ZMK_SUBSCRIPTION(battery_type_listener, zmk_peripheral_battery_state_changed);
+
 /* HID Usage IDs (USB HID Usage Tables 1.21, Keyboard/Keypad page) */
-#define HID_KEY_0     0x27
-#define HID_KEY_1     0x1E
-#define HID_KEY_2     0x1F
-#define HID_KEY_3     0x20
-#define HID_KEY_4     0x21
-#define HID_KEY_5     0x22
-#define HID_KEY_6     0x23
-#define HID_KEY_7     0x24
-#define HID_KEY_8     0x25
-#define HID_KEY_9     0x26
-#define HID_KEY_L     0x0F
-#define HID_KEY_R     0x15
-#define HID_KEY_SPACE 0x2C
+#define HID_KEY_0      0x27
+#define HID_KEY_1      0x1E
+#define HID_KEY_2      0x1F
+#define HID_KEY_3      0x20
+#define HID_KEY_4      0x21
+#define HID_KEY_5      0x22
+#define HID_KEY_6      0x23
+#define HID_KEY_7      0x24
+#define HID_KEY_8      0x25
+#define HID_KEY_9      0x26
+#define HID_KEY_L      0x0F
+#define HID_KEY_R      0x15
+#define HID_KEY_SPACE  0x2C
 #define HID_KEY_LSHIFT 0xE1
 
 /* 文字→HIDキーコードのマッピング構造体 */
@@ -122,31 +146,16 @@ static int send_number(int value)
     return send_string(buf);
 }
 
-/*
- * ペリフェラルのバッテリー残量を取得する。
- * index: 0 = Left, 1 = Right
- * 取得失敗時は -1 を返す。
- */
-static int get_peripheral_battery(uint8_t index)
-{
-    uint8_t level = 0;
-    int rc = zmk_split_get_peripheral_battery_level(index, &level);
-    return (rc == 0) ? (int)level : -1;
-}
-
 /* キー押下時の処理: "L85 R72" を送信する */
 static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
                                      struct zmk_behavior_binding_event event)
 {
-    int left  = get_peripheral_battery(0);
-    int right = get_peripheral_battery(1);
-
     /* "L" */
     send_char('L');
 
     /* Left battery value or "--" if unavailable */
-    if (left >= 0) {
-        send_number(left);
+    if (peripheral_battery_valid[0]) {
+        send_number(peripheral_battery[0]);
     } else {
         send_string("--");
     }
@@ -158,8 +167,8 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
     send_char('R');
 
     /* Right battery value or "--" if unavailable */
-    if (right >= 0) {
-        send_number(right);
+    if (peripheral_battery_valid[1]) {
+        send_number(peripheral_battery[1]);
     } else {
         send_string("--");
     }
