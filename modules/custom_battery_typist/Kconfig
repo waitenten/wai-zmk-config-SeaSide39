@@ -1,0 +1,5 @@
+config CUSTOM_BATTERY_TYPIST
+    bool "Enable battery level typing behavior"
+    default y
+    depends on ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    depends on ZMK_SPLIT_ROLE_CENTRAL
