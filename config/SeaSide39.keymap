@@ -547,10 +547,17 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-soft_off_hold: soft_off_hold {
+
+        soft_off_hold: soft_off_hold {
             compatible = "zmk,behavior-soft-off";
             #binding-cells = <0>;
             hold-time-ms = <3000>;
+        };
+
+        /* ===== 追加: バッテリー残量タイピングビヘイビア ===== */
+        battery_type: battery_type {
+            compatible = "zmk,behavior-battery-type";
+            #binding-cells = <0>;
         };
     };
 
@@ -617,10 +624,10 @@ soft_off_hold: soft_off_hold {
 
         CONFIG {
             bindings = <
-&none  &none  &sys_reset  &none  &ind_bat                    &ind_bat  &none  &sys_reset  &none  &none
-&none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
-&none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
-&none  &none  &none       &none  &none     &none      &none  &none                               &none
+&none  &none  &sys_reset  &none  &ind_bat                          &ind_bat       &none  &sys_reset  &none  &none
+&none  &none  &none       &none  &battery_type                     &battery_type  &none  &none       &none  &none
+&none  &none  &none       &none  &none                             &none          &none  &none       &none  &none
+&none  &none  &none       &none  &none          &none      &none   &none                                    &none
             >;
         };
     };
