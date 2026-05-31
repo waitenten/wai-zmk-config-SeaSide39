@@ -577,7 +577,7 @@
 &none  &none  &kp INTERNATIONAL_3  &kp LS(NUMBER_6)  &kp PERCENT                                 &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &none  &none  &kp DOLLAR           &kp LS(NUMBER_1)  &kp LEFT_BRACKET                            &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
 &none  &none  &none                &kp HASH          &kp LS(INT1)                                &kp KP_N0        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &td_num_comm
-&none  &none  &none                &none             &kp ENTER         &none      &kp BACKSPACE  &kp LS(MINUS)                                                       &to 0
+&none  &none  &none                &none             &none             &none      &kp BACKSPACE  &kp LS(MINUS)                                                       &kp ENTER
             >;
         };
 
@@ -612,10 +612,10 @@
 
         CONFIG {
             bindings = <
-&bt BT_CLR_ALL  &bt BT_CLR    &bootloader   &none         &ind_bat                                  &ind_bat  &none  &bootloader  &none  &none
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &none     &none  &none        &none  &none
-&bt0_win        &bt1_mac      &none         &none         &bt4_win                                  &none     &none  &none        &none  &none
-&none           &none         &none         &none         &none         &sys_reset      &sys_reset  &none                                &none
+&none  &none  &sys_reset  &none  &ind_bat                    &ind_bat  &none  &sys_reset  &none  &none
+&none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
+&none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
+&none  &none  &none       &none  &none     &none      &none  &none                               &none
             >;
         };
     };
