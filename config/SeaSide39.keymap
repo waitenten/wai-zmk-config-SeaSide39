@@ -547,6 +547,11 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+soft_off_hold: soft_off_hold {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            hold-time-ms = <3000>;
+        };
     };
 
     keymap {
@@ -612,7 +617,7 @@
 
         CONFIG {
             bindings = <
-&sys_reset  &none  &sys_reset  &none  &ind_bat                    &ind_bat  &none  &sys_reset  &none  &none
+&soft_off_hold  &none  &sys_reset  &none  &ind_bat                    &ind_bat  &none  &sys_reset  &none  &none
 &none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
 &none  &none  &none       &none  &none                       &none     &none  &none       &none  &none
 &none  &none  &none       &none  &none     &none      &none  &none                               &none
