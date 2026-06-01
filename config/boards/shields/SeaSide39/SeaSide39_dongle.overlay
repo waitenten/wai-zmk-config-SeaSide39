@@ -124,6 +124,29 @@ zip_mouse_gesture {
             bindings = <&to 0>;
         };
     };
+zip_mouse_gesture_b: zip_mouse_gesture_b {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        enable-eager-mode;
+        stroke-size = <150>;
+
+        win_up {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LG(UP)>;
+        };
+        win_down {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LG(DOWN)>;
+        };
+        win_left {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LG(LEFT)>;
+        };
+        win_right {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LG(RIGHT)>;
+        };
+    };
 
     layer_listeners {
         compatible = "zmk,layer-listeners";
@@ -150,6 +173,11 @@ zip_mouse_gesture {
                 <&zip_xy_scaler 1 8>,
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_invert (-1) 1>;
+        };
+
+        gesture-b-layer {
+            layers = <7>;
+            input-processors = <&zip_mouse_gesture_b &zip_slow 7 6>;
         };
     };
 };
