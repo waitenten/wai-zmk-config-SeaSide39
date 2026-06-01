@@ -54,6 +54,43 @@ zip_mouse_gesture_b: zip_mouse_gesture_b {
             pattern = <GESTURE_RIGHT>;
             bindings = <&kp LG(RIGHT)>;
         };
+zip_mouse_gesture_c: zip_mouse_gesture_c {
+    compatible = "zmk,input-processor-mouse-gesture";
+    #input-processor-cells = <0>;
+    stroke-size = <150>;
+    enable-eager-mode;
+
+    desk_up {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LG(D)>;
+    };
+    desk_down {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LG(D)>;
+    };
+    alt_shift_tab {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(LS(TAB))>;
+    };
+    alt_tab {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(TAB)>;
+    };
+};
+
+zip_keybind_arrows: zip_keybind_arrows {
+    compatible = "zmk,input-processor-keybind";
+    #input-processor-cells = <0>;
+    track_remainders;
+    bindings = <&kp RIGHT>,
+              <&kp LEFT>,
+              <&kp DOWN>,
+              <&kp UP>;
+    tick = <40>;
+    wait-ms = <0>;
+    tap-ms = <10>;
+    mode = <1>;
+};
     };
     combos {
         compatible = "zmk,combos";
@@ -603,7 +640,7 @@ zip_mouse_gesture_b: zip_mouse_gesture_b {
         default_layer {
             bindings = <
 &kp Q     &kp W    &kp E   &kp R          &kp T                               &kp Y       &kp U          &kp I      &kp O                       &kp P
-&kp A     &kp S    &kp D   &lt_tr190 4 F  &kp G                               &kp H       &lt_tr190 4 J  &kp K      &kp L                       &minus_ub
+&kp A     &kp S    &kp D   &lt_tr190 4 F  &kp G                               &kp H       &lt_tr190 4 J  &lt 8 K      &kp L                       &minus_ub
 &kp X     &kp Z    &kp C   &lt_tr190 5 V  &kp B                               &kp N       &lt_tr190 5 M  &lt 7 COMMA  &mt_tr190 RIGHT_ALT PERIOD  &question
 &ctrlkey  &altkey  &fnkey  &l_l3_tab      &mins_l2  &r_sft_ej      &u_sft_bs  &d_l3_henk                                                        &mt_tr190 RCTRL ENTER
             >;
@@ -674,5 +711,13 @@ GESTURE {
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                          &trans
             >;
         };
+GESTURE_C {
+    bindings = <
+&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                          &trans
+    >;
+};
     };
 };
