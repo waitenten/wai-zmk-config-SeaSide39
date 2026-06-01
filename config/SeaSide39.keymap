@@ -20,78 +20,43 @@
 };
 
 / {
- zip_mouse_gesture_a: zip_mouse_gesture_a {
-    compatible = "zmk,input-processor-mouse-gesture";
-    #input-processor-cells = <0>;
-    stroke-size = <150>;
-    idle-timeout-ms = <100>;
-    enable-eager-mode;
+    zip_mouse_gesture_a: zip_mouse_gesture_a {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        stroke-size = <150>;
+        idle-timeout-ms = <100>;
+        enable-eager-mode;
 
-    go_default_up { pattern = <GESTURE_UP>; bindings = <&to 0>; };
-    go_default_down { pattern = <GESTURE_DOWN>; bindings = <&to 0>; };
-    go_default_left { pattern = <GESTURE_LEFT>; bindings = <&to 0>; };
-    go_default_right { pattern = <GESTURE_RIGHT>; bindings = <&to 0>; };
-};
-zip_mouse_gesture_b: zip_mouse_gesture_b {
+        go_default_up { pattern = <GESTURE_UP>; bindings = <&to 0>; };
+        go_default_down { pattern = <GESTURE_DOWN>; bindings = <&to 0>; };
+        go_default_left { pattern = <GESTURE_LEFT>; bindings = <&to 0>; };
+        go_default_right { pattern = <GESTURE_RIGHT>; bindings = <&to 0>; };
+    };
+
+    zip_mouse_gesture_b: zip_mouse_gesture_b {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         enable-eager-mode;
         stroke-size = <150>;
 
-        win_up {
-            pattern = <GESTURE_UP>;
-            bindings = <&kp LG(UP)>;
-        };
-        win_down {
-            pattern = <GESTURE_DOWN>;
-            bindings = <&kp LG(DOWN)>;
-        };
-        win_left {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&kp LG(LEFT)>;
-        };
-        win_right {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&kp LG(RIGHT)>;
-        };
-zip_mouse_gesture_c: zip_mouse_gesture_c {
-    compatible = "zmk,input-processor-mouse-gesture";
-    #input-processor-cells = <0>;
-    stroke-size = <150>;
-    enable-eager-mode;
+        win_up { pattern = <GESTURE_UP>; bindings = <&kp LG(UP)>; };
+        win_down { pattern = <GESTURE_DOWN>; bindings = <&kp LG(DOWN)>; };
+        win_left { pattern = <GESTURE_LEFT>; bindings = <&kp LG(LEFT)>; };
+        win_right { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(RIGHT)>; };
+    };
 
-    desk_up {
-        pattern = <GESTURE_UP>;
-        bindings = <&kp LG(D)>;
-    };
-    desk_down {
-        pattern = <GESTURE_DOWN>;
-        bindings = <&kp LG(D)>;
-    };
-    alt_shift_tab {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(LS(TAB))>;
-    };
-    alt_tab {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(TAB)>;
-    };
-};
+    zip_mouse_gesture_c: zip_mouse_gesture_c {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        stroke-size = <150>;
+        enable-eager-mode;
 
-zip_keybind_arrows: zip_keybind_arrows {
-    compatible = "zmk,input-processor-keybind";
-    #input-processor-cells = <0>;
-    track_remainders;
-    bindings = <&kp RIGHT>,
-              <&kp LEFT>,
-              <&kp DOWN>,
-              <&kp UP>;
-    tick = <40>;
-    wait-ms = <0>;
-    tap-ms = <10>;
-    mode = <1>;
-};
+        desk_up { pattern = <GESTURE_UP>; bindings = <&kp LG(D)>; };
+        desk_down { pattern = <GESTURE_DOWN>; bindings = <&kp LG(D)>; };
+        alt_shift_tab { pattern = <GESTURE_LEFT>; bindings = <&kp LA(LS(TAB))>; };
+        alt_tab { pattern = <GESTURE_RIGHT>; bindings = <&kp LA(TAB)>; };
     };
+
     combos {
         compatible = "zmk,combos";
 
