@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/mouse-gesture.h>
 
 #define MOUSE 4
 #define SCROLL 5
@@ -19,6 +20,29 @@
 };
 
 / {
+ zip_mouse_gesture_b: zip_mouse_gesture_b {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        enable-eager-mode;
+        stroke-size = <150>;
+
+        win_up {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LG(UP)>;
+        };
+        win_down {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LG(DOWN)>;
+        };
+        win_left {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LG(LEFT)>;
+        };
+        win_right {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LG(RIGHT)>;
+        };
+    };
     combos {
         compatible = "zmk,combos";
 
