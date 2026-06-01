@@ -20,7 +20,19 @@
 };
 
 / {
- zip_mouse_gesture_b: zip_mouse_gesture_b {
+ zip_mouse_gesture_a: zip_mouse_gesture_a {
+    compatible = "zmk,input-processor-mouse-gesture";
+    #input-processor-cells = <0>;
+    stroke-size = <150>;
+    idle-timeout-ms = <100>;
+    enable-eager-mode;
+
+    go_default_up { pattern = <GESTURE_UP>; bindings = <&to 0>; };
+    go_default_down { pattern = <GESTURE_DOWN>; bindings = <&to 0>; };
+    go_default_left { pattern = <GESTURE_LEFT>; bindings = <&to 0>; };
+    go_default_right { pattern = <GESTURE_RIGHT>; bindings = <&to 0>; };
+};
+zip_mouse_gesture_b: zip_mouse_gesture_b {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         enable-eager-mode;
