@@ -142,7 +142,11 @@ zip_mouse_gesture {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-        input-processors = <&zip_mouse_gesture &zip_slow 7 6>;
+        input-processors = <&zip_slow 7 6>;
+num-layer {
+    layers = <2>;
+    input-processors = <&zip_mouse_gesture &zip_slow 7 6>;
+};
 
         mouse-layer {
             layers = <4>;
