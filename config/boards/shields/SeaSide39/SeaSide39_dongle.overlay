@@ -125,14 +125,19 @@ zip_mouse_gesture {
         };
     };
 
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
+   layer_listeners {
+    compatible = "zmk,layer-listeners";
 
-        num_gesture {
-            layers = <2>;
-            bindings = <&mouse_gesture_on &mouse_gesture_off>;
-        };
+    num_gesture {
+        layers = <2>;
+        bindings = <&mouse_gesture_on &mouse_gesture_off>;
     };
+
+    gesture_layer {
+        layers = <7>;
+        bindings = <&mouse_gesture_on &mouse_gesture_off>;
+    };
+};
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
@@ -151,6 +156,9 @@ zip_mouse_gesture {
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_invert (-1) 1>;
         };
-
+gesture-layer {
+    layers = <7>;
+    input-processors = <&zip_mouse_gesture &zip_xy_scaler 0 1>;
+};
     };
 };
