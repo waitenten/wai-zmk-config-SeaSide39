@@ -3,6 +3,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 #include <mouse-gesture.dtsi>
+#include <input/processors/zmk-input-processor-keybind.dtsi>
 
 / {
     chosen {
@@ -105,7 +106,8 @@
 
     zip_mouse_gesture {
         stroke-size = <150>;
-        idle-timeout-ms = <100>;
+        idle-timeout-ms = <50>;
+        gesture-cooldown-ms = <200>;
         enable-eager-mode;
     };
 
@@ -121,6 +123,11 @@
             layers = <7>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
+
+        gesture_c_layer {
+            layers = <8>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
     };
 
     trackball_listener: trackball_listener {
@@ -130,7 +137,7 @@
 
         num-layer {
             layers = <2>;
-            input-processors = <&zip_mouse_gesture_a &zip_slow 7 6>;
+            input-processors = <&zip_keybind_arrows &zip_xy_scaler 0 1>;
         };
 
         mouse-layer {
@@ -149,6 +156,11 @@
         gesture-layer {
             layers = <7>;
             input-processors = <&zip_mouse_gesture_b &zip_xy_scaler 0 1>;
+        };
+
+        gesture-c-layer {
+            layers = <8>;
+            input-processors = <&zip_mouse_gesture_c &zip_xy_scaler 0 1>;
         };
     };
 };
