@@ -125,8 +125,6 @@ zip_mouse_gesture {
         };
     };
 zip_mouse_gesture_b: zip_mouse_gesture_b {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
         enable-eager-mode;
         stroke-size = <150>;
 
