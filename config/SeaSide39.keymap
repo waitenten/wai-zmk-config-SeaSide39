@@ -1,9 +1,9 @@
 #include <behaviors/rgbled_widget.dtsi>
+#include <dt-bindings/zmk/mouse-gesture.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/mouse-gesture.h>
 
 #define MOUSE 4
 #define SCROLL 5
@@ -27,10 +27,25 @@
         idle-timeout-ms = <100>;
         enable-eager-mode;
 
-        go_default_up { pattern = <GESTURE_UP>; bindings = <&to 0>; };
-        go_default_down { pattern = <GESTURE_DOWN>; bindings = <&to 0>; };
-        go_default_left { pattern = <GESTURE_LEFT>; bindings = <&to 0>; };
-        go_default_right { pattern = <GESTURE_RIGHT>; bindings = <&to 0>; };
+        go_default_up {
+            pattern = <GESTURE_UP>;
+            bindings = <&to 0>;
+        };
+
+        go_default_down {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&to 0>;
+        };
+
+        go_default_left {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&to 0>;
+        };
+
+        go_default_right {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&to 0>;
+        };
     };
 
     zip_mouse_gesture_b: zip_mouse_gesture_b {
@@ -39,10 +54,25 @@
         enable-eager-mode;
         stroke-size = <150>;
 
-        win_up { pattern = <GESTURE_UP>; bindings = <&kp LG(UP)>; };
-        win_down { pattern = <GESTURE_DOWN>; bindings = <&kp LG(DOWN)>; };
-        win_left { pattern = <GESTURE_LEFT>; bindings = <&kp LG(LEFT)>; };
-        win_right { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(RIGHT)>; };
+        win_up {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LG(UP)>;
+        };
+
+        win_down {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LG(DOWN)>;
+        };
+
+        win_left {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LG(LEFT)>;
+        };
+
+        win_right {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LG(RIGHT)>;
+        };
     };
 
     zip_mouse_gesture_c: zip_mouse_gesture_c {
@@ -51,10 +81,25 @@
         stroke-size = <150>;
         enable-eager-mode;
 
-        desk_up { pattern = <GESTURE_UP>; bindings = <&kp LG(D)>; };
-        desk_down { pattern = <GESTURE_DOWN>; bindings = <&kp LG(D)>; };
-        alt_shift_tab { pattern = <GESTURE_LEFT>; bindings = <&kp LA(LS(TAB))>; };
-        alt_tab { pattern = <GESTURE_RIGHT>; bindings = <&kp LA(TAB)>; };
+        desk_up {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LG(D)>;
+        };
+
+        desk_down {
+            pattern = <GESTURE_DOWN>;
+            bindings = <&kp LG(D)>;
+        };
+
+        alt_shift_tab {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LA(LS(TAB))>;
+        };
+
+        alt_tab {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LA(TAB)>;
+        };
     };
 
     combos {
@@ -593,6 +638,7 @@
         };
 
         /* ===== 追加: バッテリー残量タイピングビヘイビア ===== */
+
         battery_type: battery_type {
             compatible = "zmk,behavior-battery-type";
             #binding-cells = <0>;
@@ -604,10 +650,10 @@
 
         default_layer {
             bindings = <
-&kp Q     &kp W    &kp E   &kp R          &kp T                               &kp Y       &kp U          &kp I      &kp O                       &kp P
+&kp Q     &kp W    &kp E   &kp R          &kp T                               &kp Y       &kp U          &kp I        &kp O                       &kp P
 &kp A     &kp S    &kp D   &lt_tr190 4 F  &kp G                               &kp H       &lt_tr190 4 J  &lt 8 K      &kp L                       &minus_ub
 &kp X     &kp Z    &kp C   &lt_tr190 5 V  &kp B                               &kp N       &lt_tr190 5 M  &lt 7 COMMA  &mt_tr190 RIGHT_ALT PERIOD  &question
-&ctrlkey  &altkey  &fnkey  &l_l3_tab      &mins_l2  &r_sft_ej      &u_sft_bs  &d_l3_henk                                                        &mt_tr190 RCTRL ENTER
+&ctrlkey  &altkey  &fnkey  &l_l3_tab      &mins_l2  &r_sft_ej      &u_sft_bs  &d_l3_henk                                                          &mt_tr190 RCTRL ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -653,36 +699,38 @@
 
         SCROLL {
             bindings = <
-&trans             &trans  &trans  &trans             &mo 6                                   &mo 6            &trans  &trans  &trans  &trans
-&trans             &trans  &trans  &trans             &trans                                  &trans           &trans  &trans  &trans  &trans
-&trans             &trans  &trans  &trans             &trans                                  &trans           &trans  &trans  &trans  &trans
-&kp LA(SEMICOLON)  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &none  &kp PRINTSCREEN                          &trans
+&trans             &trans  &trans  &trans             &mo 6                                       &mo 6            &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans             &trans                                      &trans           &trans  &trans  &trans  &trans
+&trans             &trans  &trans  &trans             &trans                                      &trans           &trans  &trans  &trans  &trans
+&kp LA(SEMICOLON)  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP      &kp K_WWW  &kp PRINTSCREEN                          &trans
             >;
         };
 
         CONFIG {
             bindings = <
-&none  &none  &sys_reset  &none  &ind_bat                          &ind_bat       &none  &sys_reset  &none  &none
-&none  &none  &none       &none  &battery_type                     &battery_type  &none  &none       &none  &none
-&none  &none  &none       &none  &none                             &none          &none  &none       &none  &none
-&none  &none  &none       &none  &none          &none      &none   &none                                    &none
+&none  &none  &sys_reset  &none  &ind_bat                         &ind_bat       &none  &sys_reset  &none  &none
+&none  &none  &none       &none  &battery_type                    &battery_type  &none  &none       &none  &none
+&none  &none  &none       &none  &none                            &none          &none  &none       &none  &none
+&none  &none  &none       &none  &none          &none      &none  &none                                    &none
             >;
         };
-GESTURE {
+
+        GESTURE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
-GESTURE_C {
-    bindings = <
-&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans                          &trans
-    >;
-};
+
+        GESTURE_C {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
     };
 };
