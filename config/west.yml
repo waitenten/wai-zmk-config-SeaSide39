@@ -27,5 +27,8 @@ manifest:
     - name: zmk-listeners
       remote: ssbb
       revision: v1
+    - name: zmk-input-processor-keybind
+      remote: zettaface
+      revision: main
   self:
     path: config
