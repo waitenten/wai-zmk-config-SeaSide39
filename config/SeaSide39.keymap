@@ -109,9 +109,9 @@ zip_keybind_arrows: zip_keybind_arrows {
     track_remainders;
     bindings = <&kp RIGHT>,
               <&kp LEFT>,
-              <&kp DOWN>,
-              <&kp UP>;
-    tick = <40>;
+              <&kp UP>,
+              <&kp DOWN>;
+    tick = <20>;
     wait-ms = <0>;
     tap-ms = <10>;
     mode = <1>;
