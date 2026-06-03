@@ -139,6 +139,10 @@
             input-processors = <&zip_mouse_gesture_a &zip_slow 7 6>;
         };
 
+arrow-layer {
+    layers = <3>;
+    input-processors = <&zip_keybind_arrows &zip_xy_scaler 0 1>;
+};
         mouse-layer {
             layers = <4>;
             input-processors = <&zip_slow 3 4>;
