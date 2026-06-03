@@ -24,7 +24,7 @@
     zip_mouse_gesture_a: zip_mouse_gesture_a {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        stroke-size = <100>;
+        stroke-size = <90>;
         idle-timeout-ms = <100>;
         enable-eager-mode;
 
@@ -53,7 +53,7 @@
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         enable-eager-mode;
-        stroke-size = <100>;
+        stroke-size = <90>;
 
         win_up {
             pattern = <GESTURE_UP>;
@@ -79,7 +79,7 @@
     zip_mouse_gesture_c: zip_mouse_gesture_c {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        stroke-size = <100>;
+        stroke-size = <90>;
         enable-eager-mode;
 
         desk_up {
@@ -111,7 +111,7 @@ zip_keybind_arrows: zip_keybind_arrows {
               <&kp LEFT>,
               <&kp UP>,
               <&kp DOWN>;
-    tick = <12>;
+    tick = <8>;
     wait-ms = <0>;
     tap-ms = <10>;
     mode = <1>;
