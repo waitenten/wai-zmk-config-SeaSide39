@@ -111,7 +111,7 @@ zip_keybind_arrows: zip_keybind_arrows {
               <&kp LEFT>,
               <&kp UP>,
               <&kp DOWN>;
-    tick = <10>;
+    tick = <3>;
     wait-ms = <0>;
     tap-ms = <10>;
     mode = <1>;
