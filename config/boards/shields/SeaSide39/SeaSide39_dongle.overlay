@@ -127,6 +127,11 @@
             layers = <8>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
+
+        arrow_gesture_layer {
+            layers = <3>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
     };
 
     trackball_listener: trackball_listener {
@@ -141,7 +146,7 @@
 
         arrow-layer {
             layers = <3>;
-            input-processors = <&zip_xy_scaler 0 1>;
+            input-processors = <&zip_mouse_gesture_arrow &zip_xy_scaler 0 1>;
         };
 
         mouse-layer {
