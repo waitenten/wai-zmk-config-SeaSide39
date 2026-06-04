@@ -111,9 +111,9 @@
         stroke-size = <90>;
         enable-eager-mode;
 
-        addr_bar_up {
+        desk_up {
             pattern = <GESTURE_UP>;
-            bindings = <&kp LC(L)>;
+            bindings = <&kp LG(D)>;
         };
 
         win_tab_down {
