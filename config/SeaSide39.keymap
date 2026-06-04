@@ -21,6 +21,29 @@
 };
 
 / {
+    zip_mouse_gesture_arrow: zip_mouse_gesture_arrow {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        stroke-size = <90>;
+        idle-timeout-ms = <100>;
+        enable-eager-mode;
+
+        addr_bar {
+            pattern = <GESTURE_UP>;
+            bindings = <&kp LC(L)>;
+        };
+
+        prev_tab {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LC(LS(TAB))>;
+        };
+
+        next_tab {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LC(TAB)>;
+        };
+    };
+
     zip_mouse_gesture_a: zip_mouse_gesture_a {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
@@ -698,9 +721,9 @@ zip_keybind_arrows: zip_keybind_arrows {
 
         ARROW {
             bindings = <
-&none  &none  &none  &none  &none                               &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END              &kp PAGE_UP
-&none  &none  &none  &none  &none                               &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp PAGE_DOWN
-&none  &none  &none  &none  &none                               &kp RA(RIGHT)       &mo 5           &none           &kp LC(LS(TAB))      &kp LC(TAB)
+&none  &none  &none  &none  &none                               &kp RC(F4)          &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_UP
+&none  &none  &none  &none  &none                               &kp RA(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN
+&none  &none  &none  &none  &none                               &kp RA(RIGHT)       &mo 5           &none           &none            &kp LC(LS(T))
 &none  &none  &none  &none  &none  &none      &kp INT_MUHENKAN  &kp INT_HENKAN                                                       &to 0
             >;
 
