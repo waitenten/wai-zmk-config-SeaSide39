@@ -93,19 +93,19 @@
             bindings = <&kp LG(D)>;
         };
 
-        desk_down {
+        win_tab_down {
             pattern = <GESTURE_DOWN>;
-            bindings = <&kp LG(D)>;
+            bindings = <&kp LG(TAB)>;
         };
 
-        alt_shift_tab {
+        alt_shift_esc {
             pattern = <GESTURE_LEFT>;
-            bindings = <&kp LA(LS(TAB))>;
+            bindings = <&kp LA(LS(ESCAPE))>;
         };
 
-        alt_tab {
+        alt_esc {
             pattern = <GESTURE_RIGHT>;
-            bindings = <&kp LA(TAB)>;
+            bindings = <&kp LA(ESCAPE)>;
         };
     };
 
