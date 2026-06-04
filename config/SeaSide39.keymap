@@ -54,6 +54,7 @@
         #input-processor-cells = <0>;
         enable-eager-mode;
         stroke-size = <90>;
+        idle-timeout-ms = <100>;
 
         win_up {
             pattern = <GESTURE_UP>;
@@ -73,6 +74,11 @@
         win_right {
             pattern = <GESTURE_RIGHT>;
             bindings = <&kp LG(RIGHT)>;
+        };
+
+        escape_rl {
+            pattern = <GESTURE_LEFT GESTURE_RIGHT>;
+            bindings = <&kp ESCAPE>;
         };
     };
 
@@ -651,8 +657,6 @@ zip_keybind_arrows: zip_keybind_arrows {
             #binding-cells = <0>;
             hold-time-ms = <3000>;
         };
-
-        /* ===== 追加: バッテリー残量タイピングビヘイビア ===== */
 
         battery_type: battery_type {
             compatible = "zmk,behavior-battery-type";
