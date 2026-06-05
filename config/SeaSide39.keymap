@@ -118,7 +118,7 @@
 
         win_tab_down {
             pattern = <GESTURE_DOWN>;
-            bindings = <&kp LG(TAB)>;
+            bindings = <&kp LA(LC(TAB))>;
         };
 
         alt_esc {
