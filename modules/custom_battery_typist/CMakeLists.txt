@@ -1,5 +1,0 @@
-if(CONFIG_CUSTOM_BATTERY_TYPIST)
-  zephyr_library_named(custom_battery_typist)
-  zephyr_library_sources(src/behavior_battery_type.c)
-  zephyr_library_include_directories(${ZMK_DIR}/include)
-endif()

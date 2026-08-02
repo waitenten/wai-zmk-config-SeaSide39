@@ -1,5 +1,0 @@
-description: Battery level typing behavior
-
-compatible: "zmk,behavior-battery-type"
-
-include: zero_param.yaml
