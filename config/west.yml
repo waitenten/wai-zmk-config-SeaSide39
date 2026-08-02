@@ -6,12 +6,6 @@ manifest:
       url-base: https://github.com/badjeff
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: kot149
-      url-base: https://github.com/kot149
-    - name: ssbb
-      url-base: https://github.com/ssbb
-    - name: zettaface
-      url-base: https://github.com/zettaface
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -23,14 +17,5 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
-    - name: zmk-mouse-gesture
-      remote: kot149
-      revision: v1
-    - name: zmk-listeners
-      remote: ssbb
-      revision: v1
-    - name: zmk-input-processor-keybind
-      remote: zettaface
-      revision: main
   self:
     path: config
