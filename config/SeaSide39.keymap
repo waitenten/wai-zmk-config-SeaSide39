@@ -15,7 +15,6 @@
 };
 
 / {
-
     combos {
         compatible = "zmk,combos";
 
@@ -620,10 +619,10 @@
 
         CONFIG {
             bindings = <
-&none  &none  &sys_reset  &none  &ind_bat                         &ind_bat       &none  &sys_reset  &none  &none
-&none  &none  &none       &none  &battery_type                    &battery_type  &none  &none       &none  &none
-&none  &none  &none       &none  &none                            &none          &none  &none       &none  &none
-&none  &none  &none       &none  &none          &none      &none  &none                                    &none
+&bt BT_CLR      &none         &sys_reset    &none         &ind_bat                        &ind_bat  &none  &sys_reset  &none  &none
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none     &none  &none       &none  &none
+&none           &none         &none         &none         &none                           &none     &none  &none       &none  &none
+&bt BT_CLR_ALL  &none         &none         &none         &none         &none      &none  &none                               &none
             >;
         };
 
