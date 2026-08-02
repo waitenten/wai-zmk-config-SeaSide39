@@ -1,14 +1,8 @@
 #include <behaviors/rgbled_widget.dtsi>
-#include <dt-bindings/zmk/mouse-gesture.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <input/processors/zmk-input-processor-keybind.dtsi>
-
-#define MOUSE 4
-#define SCROLL 5
-#define NUM 6
 
 &mt {
     flavor = "balanced";
@@ -21,130 +15,6 @@
 };
 
 / {
-    zip_mouse_gesture_arrow: zip_mouse_gesture_arrow {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
-        stroke-size = <90>;
-        idle-timeout-ms = <100>;
-        enable-eager-mode;
-
-        addr_bar {
-            pattern = <GESTURE_UP>;
-            bindings = <&kp LC(L)>;
-        };
-
-        prev_tab {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&kp LC(LS(TAB))>;
-        };
-
-        next_tab {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&kp LC(TAB)>;
-        };
-    };
-
-    zip_mouse_gesture_a: zip_mouse_gesture_a {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
-        stroke-size = <90>;
-        idle-timeout-ms = <100>;
-        enable-eager-mode;
-
-        go_default_up {
-            pattern = <GESTURE_UP>;
-            bindings = <&to 0>;
-        };
-
-        go_default_down {
-            pattern = <GESTURE_DOWN>;
-            bindings = <&to 0>;
-        };
-
-        go_default_left {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&to 0>;
-        };
-
-        go_default_right {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&to 0>;
-        };
-    };
-
-    zip_mouse_gesture_b: zip_mouse_gesture_b {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
-        enable-eager-mode;
-        stroke-size = <90>;
-        idle-timeout-ms = <100>;
-
-        win_up {
-            pattern = <GESTURE_UP>;
-            bindings = <&kp LG(UP)>;
-        };
-
-        win_down {
-            pattern = <GESTURE_DOWN>;
-            bindings = <&kp LG(DOWN)>;
-        };
-
-        win_left {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&kp LG(LEFT)>;
-        };
-
-        win_right {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&kp LG(RIGHT)>;
-        };
-
-        escape_rl {
-            pattern = <GESTURE_LEFT GESTURE_RIGHT>;
-            bindings = <&kp ESCAPE>;
-        };
-    };
-
-    zip_mouse_gesture_c: zip_mouse_gesture_c {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
-        stroke-size = <90>;
-        enable-eager-mode;
-
-        desk_up {
-            pattern = <GESTURE_UP>;
-            bindings = <&kp LG(D)>;
-        };
-
-        win_tab_down {
-            pattern = <GESTURE_DOWN>;
-            bindings = <&kp LA(LC(TAB))>;
-        };
-
-        alt_esc {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&kp LA(ESCAPE)>;
-        };
-
-        alt_shift_esc {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&kp LA(LS(ESCAPE))>;
-        };
-    };
-
-zip_keybind_arrows: zip_keybind_arrows {
-    compatible = "zmk,input-processor-keybind";
-    #input-processor-cells = <0>;
-    track_remainders;
-    bindings = <&kp RIGHT>,
-              <&kp LEFT>,
-              <&kp UP>,
-              <&kp DOWN>;
-    tick = <8>;
-    wait-ms = <0>;
-    tap-ms = <10>;
-    mode = <1>;
-};
 
     combos {
         compatible = "zmk,combos";
