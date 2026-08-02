@@ -511,7 +511,7 @@
         mac_r_sft_ej: mac_r_sft_ej {
             compatible = "zmk,behavior-mod-morph";
             label = "MAC_R_SFT_EJ";
-            bindings = <&mt LEFT_SHIFT LANG2>, <&kp RG(LANG1)>;
+            bindings = <&mt LEFT_SHIFT LANG2>, <&kp LANGUAGE_1>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
