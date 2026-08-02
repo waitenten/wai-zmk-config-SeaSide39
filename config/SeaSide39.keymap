@@ -303,7 +303,7 @@
             label = "BT0TOWIN";
         };
 
-        bt1_mac: bt1_mac {
+        bt1_win: bt1_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -311,13 +311,13 @@
                 <&bt BT_SEL 1>,
                 <&macro_release>,
                 <&macro_tap>,
-                <&to 1>,
+                <&to 0>,
                 <&macro_release>;
 
-            label = "BT1_MAC";
+            label = "BT1_WIN";
         };
 
-        bt4_win: bt4_win {
+        bt4_mac: bt4_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -325,10 +325,10 @@
                 <&bt BT_SEL 4>,
                 <&macro_release>,
                 <&macro_tap>,
-                <&to 0>,
+                <&to 1>,
                 <&macro_release>;
 
-            label = "BT4_WIN";
+            label = "BT4_MAC";
         };
     };
 
@@ -626,7 +626,7 @@
             bindings = <
 &bt BT_CLR      &none         &sys_reset    &none         &ind_bat                        &ind_bat  &none  &sys_reset  &none  &none
 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none     &none  &none       &none  &none
-&none           &none         &none         &none         &none                           &none     &none  &none       &none  &none
+&bt0_win        &bt1_win      &none         &none         &bt4_mac                        &none     &none  &none       &none  &none
 &bt BT_CLR_ALL  &none         &none         &none         &none         &none      &none  &none                               &none
             >;
         };
